@@ -43,6 +43,8 @@ pip install -r requirements.txt
 python reproduce.py
 ```
 
+Windows note: run `git config --global core.longpaths true` before cloning, or clone into a short path such as `C:\work\`, because some run-record paths exceed the default 260-character limit when the clone location itself is long.
+
 `reproduce.py` runs four eval-only steps over the shipped checkpoints (see Section 3 for what
 each step recomputes). On the first run `timm` downloads the DINOv3 backbone
 `vit_large_patch16_dinov3.lvd1689m` (~1.2 GB, not gated) into `./weights/hub`; every later run
