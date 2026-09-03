@@ -1,0 +1,7 @@
+==== 17:18:17 START oldv15 -> EXPERIMENTSRESULT/REVISION_5090/V15R_PH1/oldv15_seed42 ====
+==== 17:36:21 DONE  oldv15 (exit 0) ====
+==== 17:36:21 START realism -> EXPERIMENTSRESULT/REVISION_5090/V15R_PH1/realism_seed42 ====
+==== 17:54:22 DONE  realism (exit 0) ====
+==== 17:54:22 START wcmargin -> EXPERIMENTSRESULT/REVISION_5090/V15R_PH1/wcmargin_seed42 ====
+==== 18:29:33 DONE  wcmargin (exit 0) ====
+==== V15R PHASE1 DONE ====

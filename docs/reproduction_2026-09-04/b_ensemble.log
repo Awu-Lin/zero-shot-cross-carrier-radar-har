@@ -1,0 +1,12 @@
+[data] full-418=418
+[skip] A_REF seed42: no final-EMA checkpoint found
+[skip] A_REF seed1234: no final-EMA checkpoint found
+[skip] A_REF seed31415: no final-EMA checkpoint found
+[skip] A_REF: <2 seeds available, cannot ensemble
+DAS+ACR (A_V13_GRL)      single=0.8322+/-0.0337  maj=0.8512  logit-avg=0.8566  posterior=0.8562
+[skip] E1_jitter seed42: no final-EMA checkpoint found
+[skip] E1_jitter seed1234: no final-EMA checkpoint found
+[skip] E1_jitter seed31415: no final-EMA checkpoint found
+[skip] E1_jitter: <2 seeds available, cannot ensemble
+
+[done] wrote EXPERIMENTSRESULT\REVISION_5090\SUPP_ABLATION\eval_out\ensemble_rules.md

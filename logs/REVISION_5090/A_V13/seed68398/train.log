@@ -1,0 +1,884 @@
+[18:05:28] run_dir=G:\zhanghe\Letter journal\EXPERIMENTSRESULT\REVISION_5090\A_V13\seed68398
+[18:05:28] device=cuda
+[18:05:28] backbone=vit_large_patch16_dinov3.lvd1689m
+[18:05:28] env: manifest_dir=G:\zhanghe\Letter journal\tasks\known_people_unknown_freq\manifest dataset_root=G:\zhanghe\Letter journal use_dann=False selection=source_val_acc_ema adapter_mode=lora
+[18:05:28] set_seed(68398)
+[18:05:29] [fast_gpu] source cache 644 imgs (0.39GB) on cuda
+[18:05:29] train_source=644 train_src_rows=10:302 24:342 source_steps/epoch=40 val_all=162 heldout77_unused=140 test77_final=278
+[18:05:29] [test77_split] seed=42 dev_per_class=20
+[18:05:37] trainable params=2378753 (encoder_lora+neck+head + miro_proj+v15_falsification+v13_residual_split)
+[18:05:37] logit_prior=[-1.9678890705108643, -1.913821816444397, -1.8427258729934692, -1.9678890705108643, -2.0133514404296875, -1.8929877281188965, -2.036881923675537]
+[18:05:37] use_dann=False
+[18:05:37] use_das=True
+[18:05:37] das_mode=curriculum initial_stage={'name': 'stage1', 'p': 0.35, 'f_low': 10.0, 'f_high': 24.0}
+[18:05:37] adapter_mode=lora
+[18:05:37] schedule: epochs=100 steps/epoch=40 imgs/step=16 total_steps=4000 total_imgs=64000 warmup_steps=120
+[18:05:37] source_qualified_policy: val_acc_ema>=0.00 candidates are recorded; best candidate by 77GHz F1 is saved as diagnostic
+[18:05:37] [pool] init threshold=0.90 period=10 selection=dev77_f1
+[18:05:37] [train] epoch 1/100 steps=40 use_dann=0 das=stage1 f=[10.0,24.0] p=0.35 gpu=3.0/3.0GB
+[18:05:37] [train] ep=01 step=001/40 ce=8.5923 sc=2.8504 mi=0.9713 dn=0.0000 v13=0.0037 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.1250 lr=2.50e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/11.8GB
+[18:05:39] [train] ep=01 step=010/40 ce=8.2440 sc=2.8936 mi=0.9559 dn=0.0000 v13=0.0040 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.1375 lr=2.50e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/11.8GB
+[18:05:41] [train] ep=01 step=020/40 ce=8.1347 sc=2.8497 mi=0.9167 dn=0.0000 v13=0.0037 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.1313 lr=5.00e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/11.8GB
+[18:05:43] [train] ep=01 step=030/40 ce=8.0072 sc=2.8371 mi=0.8483 dn=0.0000 v13=0.0032 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.1396 lr=7.50e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/11.8GB
+[18:05:44] [train] ep=01 step=040/40 ce=7.9191 sc=2.8141 mi=0.7642 dn=0.0000 v13=0.0029 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.1531 lr=1.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/11.8GB
+[18:05:46] [ep_summary] ep=01/100 val_live=0.2284/0.1151 val_ema=0.0000/0.0000 test77_live=0.1439/0.0361 test77_diag_ema=0.0000/0.0000 v13=0.0029 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage1[10,24] p=0.35 ep_time=8.9s
+[18:05:46] [train] epoch 2/100 steps=40 use_dann=0 das=stage1 f=[10.0,24.0] p=0.35 gpu=3.0/15.8GB
+[18:05:46] [train] ep=02 step=001/40 ce=7.1657 sc=2.5732 mi=0.4078 dn=0.0000 v13=0.0026 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.4375 lr=1.02e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:05:47] [train] ep=02 step=010/40 ce=7.4526 sc=2.7308 mi=0.3539 dn=0.0000 v13=0.0017 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.2625 lr=1.25e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:05:49] [train] ep=02 step=020/40 ce=7.3904 sc=2.7298 mi=0.3012 dn=0.0000 v13=0.0016 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.2875 lr=1.50e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:05:51] [train] ep=02 step=030/40 ce=7.2534 sc=2.7233 mi=0.2640 dn=0.0000 v13=0.0014 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.3187 lr=1.75e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:05:53] [train] ep=02 step=040/40 ce=7.0816 sc=2.6928 mi=0.2410 dn=0.0000 v13=0.0012 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.3547 lr=2.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:05:54] [ep_summary] ep=02/100 val_live=0.4815/0.4279 val_ema=0.0000/0.0000 test77_live=0.3453/0.2279 test77_diag_ema=0.0000/0.0000 v13=0.0012 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage1[10,24] p=0.35 ep_time=8.4s
+[18:05:54] [train] epoch 3/100 steps=40 use_dann=0 das=stage1 f=[10.0,24.0] p=0.35 gpu=3.0/15.8GB
+[18:05:54] [train] ep=03 step=001/40 ce=6.2558 sc=2.5643 mi=0.1885 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.5000 lr=2.02e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:05:56] [train] ep=03 step=010/40 ce=5.5130 sc=2.3784 mi=0.2097 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.6375 lr=2.25e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:05:58] [train] ep=03 step=020/40 ce=5.2007 sc=2.3126 mi=0.2128 dn=0.0000 v13=0.0012 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.6375 lr=2.50e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:00] [train] ep=03 step=030/40 ce=4.8435 sc=2.1624 mi=0.2087 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.6667 lr=2.75e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:02] [train] ep=03 step=040/40 ce=4.6905 sc=2.1040 mi=0.1994 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.6813 lr=3.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:03] [ep_summary] ep=03/100 val_live=0.8086/0.8074 val_ema=0.0000/0.0000 test77_live=0.3957/0.2549 test77_diag_ema=0.0000/0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage1[10,24] p=0.35 ep_time=9.5s
+[18:06:03] [train] epoch 4/100 steps=40 use_dann=0 das=stage1 f=[10.0,24.0] p=0.35 gpu=3.0/15.8GB
+[18:06:04] [train] ep=04 step=001/40 ce=4.2925 sc=1.7340 mi=0.1692 dn=0.0000 v13=0.0017 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8125 lr=3.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:05] [train] ep=04 step=010/40 ce=3.1112 sc=1.8173 mi=0.1617 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8000 lr=3.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:08] [train] ep=04 step=020/40 ce=2.8897 sc=1.7465 mi=0.1622 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8281 lr=3.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:10] [train] ep=04 step=030/40 ce=2.9174 sc=1.6873 mi=0.1530 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8396 lr=3.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:12] [train] ep=04 step=040/40 ce=2.9428 sc=1.6448 mi=0.1440 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8328 lr=3.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:13] [ep_summary] ep=04/100 val_live=0.8025/0.7664 val_ema=0.0000/0.0000 test77_live=0.4317/0.3511 test77_diag_ema=0.0000/0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage1[10,24] p=0.35 ep_time=9.5s
+[18:06:13] [train] epoch 5/100 steps=40 use_dann=0 das=stage1 f=[10.0,24.0] p=0.35 gpu=3.0/15.8GB
+[18:06:13] [train] ep=05 step=001/40 ce=3.0886 sc=0.7804 mi=0.1057 dn=0.0000 v13=0.0003 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8125 lr=3.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:15] [train] ep=05 step=010/40 ce=3.2139 sc=1.3998 mi=0.1027 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.7937 lr=3.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:17] [train] ep=05 step=020/40 ce=2.9895 sc=1.5059 mi=0.0991 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8063 lr=3.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:19] [train] ep=05 step=030/40 ce=2.7150 sc=1.4750 mi=0.0963 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8354 lr=3.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:21] [train] ep=05 step=040/40 ce=2.7390 sc=1.5378 mi=0.0934 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8328 lr=3.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:24] [ep_summary] ep=05/100 val_live=0.8889/0.8947 val_ema=0.1728/0.0820 test77_live=0.3058/0.1905 test77_diag_ema=0.1439/0.0359 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage1[10,24] p=0.35 ep_time=10.9s
+[18:06:24] [save] best_sourceval_ema val_acc_ema=0.1728 source_val_live=0.8889/0.8947 source_val_ema=0.1728/0.0820 ep=5
+[18:06:24] [save] best_sourcequalified77_ema ep=5 source_val_live=0.8889/0.8947 source_val_ema=0.1728/0.0820 test77_ema=0.1439/0.0359
+[18:06:24] [train] epoch 6/100 steps=40 use_dann=0 das=stage1 f=[10.0,24.0] p=0.35 gpu=3.0/15.8GB
+[18:06:24] [train] ep=06 step=001/40 ce=1.6135 sc=1.9628 mi=0.0928 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8750 lr=3.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:26] [train] ep=06 step=010/40 ce=2.3643 sc=1.4590 mi=0.0890 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8313 lr=3.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:27] [train] ep=06 step=020/40 ce=2.0952 sc=1.4204 mi=0.0893 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8562 lr=3.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:29] [train] ep=06 step=030/40 ce=2.0666 sc=1.3840 mi=0.0878 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8646 lr=2.99e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:31] [train] ep=06 step=040/40 ce=2.0090 sc=1.3841 mi=0.0864 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8703 lr=2.99e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:34] [ep_summary] ep=06/100 val_live=0.9074/0.9078 val_ema=0.1728/0.0820 test77_live=0.4856/0.4526 test77_diag_ema=0.1439/0.0359 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage1[10,24] p=0.35 ep_time=9.8s
+[18:06:34] [train] epoch 7/100 steps=40 use_dann=0 das=stage1 f=[10.0,24.0] p=0.35 gpu=3.0/15.8GB
+[18:06:34] [train] ep=07 step=001/40 ce=1.3610 sc=1.1380 mi=0.0812 dn=0.0000 v13=0.0012 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8750 lr=2.99e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:35] [train] ep=07 step=010/40 ce=1.4648 sc=1.2614 mi=0.0787 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9125 lr=2.99e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:37] [train] ep=07 step=020/40 ce=1.6026 sc=1.2796 mi=0.0801 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9031 lr=2.99e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:39] [train] ep=07 step=030/40 ce=1.6046 sc=1.2832 mi=0.0790 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9000 lr=2.99e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:41] [train] ep=07 step=040/40 ce=1.4561 sc=1.2210 mi=0.0781 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9125 lr=2.99e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:44] [ep_summary] ep=07/100 val_live=0.9321/0.9332 val_ema=0.1975/0.1147 test77_live=0.6223/0.6155 test77_diag_ema=0.1439/0.0359 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage1[10,24] p=0.35 ep_time=9.8s
+[18:06:44] [save] best_sourceval_ema val_acc_ema=0.1975 source_val_live=0.9321/0.9332 source_val_ema=0.1975/0.1147 ep=7
+[18:06:44] [train] epoch 8/100 steps=40 use_dann=0 das=stage1 f=[10.0,24.0] p=0.35 gpu=3.0/15.8GB
+[18:06:44] [train] ep=08 step=001/40 ce=1.9445 sc=1.4076 mi=0.0889 dn=0.0000 v13=0.0014 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8750 lr=2.99e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:45] [train] ep=08 step=010/40 ce=1.2505 sc=1.1242 mi=0.0745 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9375 lr=2.99e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:47] [train] ep=08 step=020/40 ce=1.2483 sc=1.1873 mi=0.0771 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9313 lr=2.98e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:49] [train] ep=08 step=030/40 ce=1.4273 sc=1.2126 mi=0.0787 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9229 lr=2.98e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:51] [train] ep=08 step=040/40 ce=1.3258 sc=1.1907 mi=0.0794 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9297 lr=2.98e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:53] [ep_summary] ep=08/100 val_live=0.8889/0.8846 val_ema=0.2469/0.1682 test77_live=0.6259/0.5807 test77_diag_ema=0.1439/0.0359 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage1[10,24] p=0.35 ep_time=9.8s
+[18:06:53] [save] best_sourceval_ema val_acc_ema=0.2469 source_val_live=0.8889/0.8846 source_val_ema=0.2469/0.1682 ep=8
+[18:06:53] [train] epoch 9/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:06:54] [train] ep=09 step=001/40 ce=2.7698 sc=1.8027 mi=0.0780 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8125 lr=2.98e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:55] [train] ep=09 step=010/40 ce=1.6674 sc=1.2336 mi=0.0797 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9000 lr=2.98e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:57] [train] ep=09 step=020/40 ce=1.5198 sc=1.2242 mi=0.0803 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9187 lr=2.98e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:06:59] [train] ep=09 step=030/40 ce=1.4571 sc=1.2304 mi=0.0800 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9292 lr=2.97e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:01] [train] ep=09 step=040/40 ce=1.4008 sc=1.1894 mi=0.0785 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9344 lr=2.97e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:04] [ep_summary] ep=09/100 val_live=0.9383/0.9381 val_ema=0.2778/0.1850 test77_live=0.6331/0.6153 test77_diag_ema=0.1439/0.0359 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=10.6s
+[18:07:04] [save] best_sourceval_ema val_acc_ema=0.2778 source_val_live=0.9383/0.9381 source_val_ema=0.2778/0.1850 ep=9
+[18:07:04] [train] epoch 10/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:07:04] [train] ep=10 step=001/40 ce=0.5565 sc=0.8694 mi=0.0732 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.97e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:06] [train] ep=10 step=010/40 ce=0.9714 sc=1.0307 mi=0.0777 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9563 lr=2.97e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:08] [train] ep=10 step=020/40 ce=1.2187 sc=1.1479 mi=0.0761 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9344 lr=2.97e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:10] [train] ep=10 step=030/40 ce=1.1526 sc=1.1052 mi=0.0753 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9479 lr=2.96e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:12] [train] ep=10 step=040/40 ce=1.1067 sc=1.1037 mi=0.0747 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9547 lr=2.96e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:15] [pool] check ep=010/100 source_val_acc_ema=0.3086 threshold=0.90
+[18:07:15] [pool] ep=010 SKIP (source_val_acc_ema=0.3086 < 0.90)
+[18:07:15] [ep_summary] ep=10/100 val_live=0.9074/0.9068 val_ema=0.3086/0.1977 test77_live=0.7122/0.7095 test77_diag_ema=0.1439/0.0362 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=10.9s
+[18:07:15] [save] best_sourceval_ema val_acc_ema=0.3086 source_val_live=0.9074/0.9068 source_val_ema=0.3086/0.1977 ep=10
+[18:07:15] [save] best_sourcequalified77_ema ep=10 source_val_live=0.9074/0.9068 source_val_ema=0.3086/0.1977 test77_ema=0.1439/0.0362
+[18:07:15] [strict77_monitor] ep=10 best_source_epoch=10 source_val_ema=0.3086/0.1977 test77_ema_diag=0.1439/0.0362 sourcequalified_count=10 best_sourcequalified77_epoch=10 source_val_ema=0.3086/0.1977 test77_ema=0.1439/0.0362
+[18:07:15] [train] epoch 11/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:07:15] [train] ep=11 step=001/40 ce=1.2144 sc=1.2309 mi=0.0778 dn=0.0000 v13=0.0014 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9375 lr=2.96e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:17] [train] ep=11 step=010/40 ce=0.9231 sc=1.0480 mi=0.0770 dn=0.0000 v13=0.0012 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9625 lr=2.96e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:19] [train] ep=11 step=020/40 ce=0.9650 sc=1.0940 mi=0.0763 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9656 lr=2.96e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:21] [train] ep=11 step=030/40 ce=0.9816 sc=1.1046 mi=0.0771 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9667 lr=2.95e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:23] [train] ep=11 step=040/40 ce=0.9899 sc=1.0954 mi=0.0753 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9625 lr=2.95e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:26] [ep_summary] ep=11/100 val_live=0.9259/0.9270 val_ema=0.3519/0.2374 test77_live=0.7806/0.7707 test77_diag_ema=0.1439/0.0365 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=10.9s
+[18:07:26] [save] best_sourceval_ema val_acc_ema=0.3519 source_val_live=0.9259/0.9270 source_val_ema=0.3519/0.2374 ep=11
+[18:07:26] [save] best_sourcequalified77_ema ep=11 source_val_live=0.9259/0.9270 source_val_ema=0.3519/0.2374 test77_ema=0.1439/0.0365
+[18:07:26] [train] epoch 12/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:07:26] [train] ep=12 step=001/40 ce=1.2451 sc=1.4087 mi=0.0678 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9375 lr=2.95e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:28] [train] ep=12 step=010/40 ce=1.0956 sc=0.9934 mi=0.0725 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9625 lr=2.95e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:30] [train] ep=12 step=020/40 ce=0.8643 sc=0.9803 mi=0.0721 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9750 lr=2.94e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:31] [train] ep=12 step=030/40 ce=0.9030 sc=0.9545 mi=0.0729 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9708 lr=2.94e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:33] [train] ep=12 step=040/40 ce=0.8010 sc=0.9308 mi=0.0721 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9781 lr=2.94e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:36] [ep_summary] ep=12/100 val_live=0.9444/0.9439 val_ema=0.4012/0.3003 test77_live=0.7014/0.6370 test77_diag_ema=0.1583/0.0592 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=9.8s
+[18:07:36] [save] best_sourceval_ema val_acc_ema=0.4012 source_val_live=0.9444/0.9439 source_val_ema=0.4012/0.3003 ep=12
+[18:07:36] [save] best_sourcequalified77_ema ep=12 source_val_live=0.9444/0.9439 source_val_ema=0.4012/0.3003 test77_ema=0.1583/0.0592
+[18:07:36] [train] epoch 13/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:07:36] [train] ep=13 step=001/40 ce=1.5893 sc=1.0962 mi=0.0743 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8750 lr=2.94e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:38] [train] ep=13 step=010/40 ce=0.8370 sc=0.9624 mi=0.0701 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9625 lr=2.93e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:40] [train] ep=13 step=020/40 ce=0.8547 sc=1.0328 mi=0.0732 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9625 lr=2.93e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:41] [train] ep=13 step=030/40 ce=0.8126 sc=0.9891 mi=0.0719 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9646 lr=2.93e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:43] [train] ep=13 step=040/40 ce=0.7969 sc=0.9908 mi=0.0715 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9719 lr=2.92e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:46] [ep_summary] ep=13/100 val_live=0.9506/0.9510 val_ema=0.4074/0.3112 test77_live=0.7806/0.7684 test77_diag_ema=0.2014/0.0990 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=9.9s
+[18:07:46] [save] best_sourceval_ema val_acc_ema=0.4074 source_val_live=0.9506/0.9510 source_val_ema=0.4074/0.3112 ep=13
+[18:07:46] [save] best_sourcequalified77_ema ep=13 source_val_live=0.9506/0.9510 source_val_ema=0.4074/0.3112 test77_ema=0.2014/0.0990
+[18:07:46] [train] epoch 14/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:07:46] [train] ep=14 step=001/40 ce=0.3416 sc=0.9237 mi=0.0768 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.92e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:48] [train] ep=14 step=010/40 ce=0.7618 sc=0.9593 mi=0.0748 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9812 lr=2.92e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:49] [train] ep=14 step=020/40 ce=0.8632 sc=0.9882 mi=0.0716 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9688 lr=2.91e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:51] [train] ep=14 step=030/40 ce=0.8558 sc=0.9635 mi=0.0706 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9729 lr=2.91e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:53] [train] ep=14 step=040/40 ce=0.9153 sc=0.9776 mi=0.0701 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9672 lr=2.91e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:56] [ep_summary] ep=14/100 val_live=0.9691/0.9694 val_ema=0.4198/0.3259 test77_live=0.7050/0.6707 test77_diag_ema=0.2230/0.1045 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=10.0s
+[18:07:56] [save] best_sourceval_ema val_acc_ema=0.4198 source_val_live=0.9691/0.9694 source_val_ema=0.4198/0.3259 ep=14
+[18:07:56] [save] best_sourcequalified77_ema ep=14 source_val_live=0.9691/0.9694 source_val_ema=0.4198/0.3259 test77_ema=0.2230/0.1045
+[18:07:56] [train] epoch 15/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:07:56] [train] ep=15 step=001/40 ce=1.5088 sc=0.7877 mi=0.0696 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9375 lr=2.91e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:07:58] [train] ep=15 step=010/40 ce=0.5995 sc=0.7748 mi=0.0652 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9812 lr=2.90e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:00] [train] ep=15 step=020/40 ce=0.7571 sc=0.9873 mi=0.0670 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9719 lr=2.90e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:02] [train] ep=15 step=030/40 ce=0.7361 sc=0.9553 mi=0.0667 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9708 lr=2.89e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:04] [train] ep=15 step=040/40 ce=0.7470 sc=0.9565 mi=0.0663 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9688 lr=2.89e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:07] [ep_summary] ep=15/100 val_live=0.9630/0.9628 val_ema=0.4506/0.3725 test77_live=0.7662/0.7554 test77_diag_ema=0.2374/0.1191 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=10.7s
+[18:08:07] [save] best_sourceval_ema val_acc_ema=0.4506 source_val_live=0.9630/0.9628 source_val_ema=0.4506/0.3725 ep=15
+[18:08:07] [save] best_sourcequalified77_ema ep=15 source_val_live=0.9630/0.9628 source_val_ema=0.4506/0.3725 test77_ema=0.2374/0.1191
+[18:08:07] [train] epoch 16/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:08:07] [train] ep=16 step=001/40 ce=0.3690 sc=0.6322 mi=0.0661 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.89e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:09] [train] ep=16 step=010/40 ce=0.5691 sc=0.7311 mi=0.0662 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.88e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:11] [train] ep=16 step=020/40 ce=0.5923 sc=0.8463 mi=0.0666 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9844 lr=2.88e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:13] [train] ep=16 step=030/40 ce=0.6802 sc=0.8895 mi=0.0659 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9750 lr=2.87e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:15] [train] ep=16 step=040/40 ce=0.6627 sc=0.9278 mi=0.0649 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9750 lr=2.87e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:18] [ep_summary] ep=16/100 val_live=0.9630/0.9630 val_ema=0.4691/0.3987 test77_live=0.6942/0.6593 test77_diag_ema=0.2626/0.1377 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=10.8s
+[18:08:18] [save] best_sourceval_ema val_acc_ema=0.4691 source_val_live=0.9630/0.9630 source_val_ema=0.4691/0.3987 ep=16
+[18:08:18] [save] best_sourcequalified77_ema ep=16 source_val_live=0.9630/0.9630 source_val_ema=0.4691/0.3987 test77_ema=0.2626/0.1377
+[18:08:18] [train] epoch 17/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:08:18] [train] ep=17 step=001/40 ce=0.3048 sc=0.8819 mi=0.0644 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.87e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:20] [train] ep=17 step=010/40 ce=0.5503 sc=0.8214 mi=0.0683 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9812 lr=2.86e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:22] [train] ep=17 step=020/40 ce=0.7214 sc=0.8798 mi=0.0682 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9719 lr=2.86e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:23] [train] ep=17 step=030/40 ce=0.7428 sc=0.8863 mi=0.0681 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9729 lr=2.85e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:25] [train] ep=17 step=040/40 ce=0.7154 sc=0.9086 mi=0.0685 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9750 lr=2.85e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:28] [ep_summary] ep=17/100 val_live=0.9383/0.9378 val_ema=0.4877/0.4258 test77_live=0.7698/0.7492 test77_diag_ema=0.2698/0.1504 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=10.5s
+[18:08:28] [save] best_sourceval_ema val_acc_ema=0.4877 source_val_live=0.9383/0.9378 source_val_ema=0.4877/0.4258 ep=17
+[18:08:28] [save] best_sourcequalified77_ema ep=17 source_val_live=0.9383/0.9378 source_val_ema=0.4877/0.4258 test77_ema=0.2698/0.1504
+[18:08:28] [train] epoch 18/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:08:28] [train] ep=18 step=001/40 ce=0.2874 sc=0.7521 mi=0.0703 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.85e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:30] [train] ep=18 step=010/40 ce=0.6793 sc=0.8858 mi=0.0666 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9750 lr=2.84e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:32] [train] ep=18 step=020/40 ce=0.6000 sc=0.9205 mi=0.0667 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9812 lr=2.84e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:34] [train] ep=18 step=030/40 ce=0.5280 sc=0.8211 mi=0.0663 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.83e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:36] [train] ep=18 step=040/40 ce=0.5509 sc=0.8519 mi=0.0665 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9859 lr=2.83e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:39] [ep_summary] ep=18/100 val_live=0.9877/0.9878 val_ema=0.5185/0.4722 test77_live=0.7518/0.6934 test77_diag_ema=0.2662/0.1500 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=10.7s
+[18:08:39] [save] best_sourceval_ema val_acc_ema=0.5185 source_val_live=0.9877/0.9878 source_val_ema=0.5185/0.4722 ep=18
+[18:08:39] [train] epoch 19/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:08:39] [train] ep=19 step=001/40 ce=1.0049 sc=0.9721 mi=0.0782 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9375 lr=2.83e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:41] [train] ep=19 step=010/40 ce=0.5187 sc=0.7515 mi=0.0662 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9812 lr=2.82e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:43] [train] ep=19 step=020/40 ce=0.4632 sc=0.7896 mi=0.0653 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=2.82e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:45] [train] ep=19 step=030/40 ce=0.4632 sc=0.8202 mi=0.0661 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9896 lr=2.81e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:47] [train] ep=19 step=040/40 ce=0.4426 sc=0.8149 mi=0.0651 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9922 lr=2.80e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:50] [ep_summary] ep=19/100 val_live=0.9815/0.9817 val_ema=0.5617/0.5135 test77_live=0.7374/0.6891 test77_diag_ema=0.2662/0.1570 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=10.9s
+[18:08:50] [save] best_sourceval_ema val_acc_ema=0.5617 source_val_live=0.9815/0.9817 source_val_ema=0.5617/0.5135 ep=19
+[18:08:50] [save] best_sourcequalified77_ema ep=19 source_val_live=0.9815/0.9817 source_val_ema=0.5617/0.5135 test77_ema=0.2662/0.1570
+[18:08:50] [train] epoch 20/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:08:50] [train] ep=20 step=001/40 ce=0.3679 sc=0.9247 mi=0.0741 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.80e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:52] [train] ep=20 step=010/40 ce=0.5087 sc=0.8570 mi=0.0668 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9750 lr=2.80e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:54] [train] ep=20 step=020/40 ce=0.4461 sc=0.8211 mi=0.0664 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9844 lr=2.79e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:56] [train] ep=20 step=030/40 ce=0.4313 sc=0.8100 mi=0.0668 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9896 lr=2.79e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:08:57] [train] ep=20 step=040/40 ce=0.4663 sc=0.8609 mi=0.0657 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.78e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:00] [pool] check ep=020/100 source_val_acc_ema=0.6173 threshold=0.90
+[18:09:00] [pool] ep=020 SKIP (source_val_acc_ema=0.6173 < 0.90)
+[18:09:00] [ep_summary] ep=20/100 val_live=0.9630/0.9639 val_ema=0.6173/0.5694 test77_live=0.7482/0.7116 test77_diag_ema=0.2806/0.1845 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=10.4s
+[18:09:00] [save] best_sourceval_ema val_acc_ema=0.6173 source_val_live=0.9630/0.9639 source_val_ema=0.6173/0.5694 ep=20
+[18:09:00] [save] best_sourcequalified77_ema ep=20 source_val_live=0.9630/0.9639 source_val_ema=0.6173/0.5694 test77_ema=0.2806/0.1845
+[18:09:00] [strict77_monitor] ep=20 best_source_epoch=20 source_val_ema=0.6173/0.5694 test77_ema_diag=0.2806/0.1845 sourcequalified_count=20 best_sourcequalified77_epoch=20 source_val_ema=0.6173/0.5694 test77_ema=0.2806/0.1845
+[18:09:00] [train] epoch 21/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:09:00] [train] ep=21 step=001/40 ce=1.8753 sc=1.7413 mi=0.0833 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.8750 lr=2.78e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:02] [train] ep=21 step=010/40 ce=0.5503 sc=0.8786 mi=0.0651 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9812 lr=2.77e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:04] [train] ep=21 step=020/40 ce=0.5881 sc=0.8991 mi=0.0653 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9781 lr=2.77e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:06] [train] ep=21 step=030/40 ce=0.5253 sc=0.8657 mi=0.0655 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9833 lr=2.76e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:08] [train] ep=21 step=040/40 ce=0.5690 sc=0.8854 mi=0.0651 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9781 lr=2.75e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:10] [ep_summary] ep=21/100 val_live=0.9630/0.9635 val_ema=0.6358/0.5940 test77_live=0.7662/0.7040 test77_diag_ema=0.3237/0.2317 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=10.0s
+[18:09:10] [save] best_sourceval_ema val_acc_ema=0.6358 source_val_live=0.9630/0.9635 source_val_ema=0.6358/0.5940 ep=21
+[18:09:10] [save] best_sourcequalified77_ema ep=21 source_val_live=0.9630/0.9635 source_val_ema=0.6358/0.5940 test77_ema=0.3237/0.2317
+[18:09:10] [train] epoch 22/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:09:10] [train] ep=22 step=001/40 ce=0.7030 sc=0.8491 mi=0.0577 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.75e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:12] [train] ep=22 step=010/40 ce=0.5449 sc=0.8783 mi=0.0648 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9812 lr=2.75e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:14] [train] ep=22 step=020/40 ce=0.4581 sc=0.8109 mi=0.0640 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.74e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:16] [train] ep=22 step=030/40 ce=0.5023 sc=0.7910 mi=0.0627 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9854 lr=2.73e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:17] [train] ep=22 step=040/40 ce=0.5012 sc=0.8007 mi=0.0627 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.73e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:20] [ep_summary] ep=22/100 val_live=0.9506/0.9505 val_ema=0.6420/0.6004 test77_live=0.7518/0.7157 test77_diag_ema=0.3525/0.2650 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=9.9s
+[18:09:20] [save] best_sourceval_ema val_acc_ema=0.6420 source_val_live=0.9506/0.9505 source_val_ema=0.6420/0.6004 ep=22
+[18:09:20] [save] best_sourcequalified77_ema ep=22 source_val_live=0.9506/0.9505 source_val_ema=0.6420/0.6004 test77_ema=0.3525/0.2650
+[18:09:20] [train] epoch 23/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:09:20] [train] ep=23 step=001/40 ce=0.3079 sc=0.4496 mi=0.0601 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.72e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:22] [train] ep=23 step=010/40 ce=0.3869 sc=0.7384 mi=0.0628 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.72e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:24] [train] ep=23 step=020/40 ce=0.4012 sc=0.7737 mi=0.0638 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.71e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:26] [train] ep=23 step=030/40 ce=0.3844 sc=0.8289 mi=0.0629 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.70e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:29] [train] ep=23 step=040/40 ce=0.4528 sc=0.8231 mi=0.0628 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9891 lr=2.70e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:31] [ep_summary] ep=23/100 val_live=0.9568/0.9576 val_ema=0.6543/0.6160 test77_live=0.7266/0.7160 test77_diag_ema=0.3633/0.2810 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=11.0s
+[18:09:31] [save] best_sourceval_ema val_acc_ema=0.6543 source_val_live=0.9568/0.9576 source_val_ema=0.6543/0.6160 ep=23
+[18:09:31] [save] best_sourcequalified77_ema ep=23 source_val_live=0.9568/0.9576 source_val_ema=0.6543/0.6160 test77_ema=0.3633/0.2810
+[18:09:31] [train] epoch 24/100 steps=40 use_dann=0 das=stage2 f=[10.0,50.0] p=0.70 gpu=3.0/15.8GB
+[18:09:32] [train] ep=24 step=001/40 ce=0.2835 sc=0.5458 mi=0.0635 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.70e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:33] [train] ep=24 step=010/40 ce=0.3664 sc=0.7053 mi=0.0610 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.69e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:35] [train] ep=24 step=020/40 ce=0.5175 sc=0.8242 mi=0.0625 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9812 lr=2.68e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:37] [train] ep=24 step=030/40 ce=0.5109 sc=0.8709 mi=0.0626 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9833 lr=2.67e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:39] [train] ep=24 step=040/40 ce=0.5200 sc=0.8962 mi=0.0624 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9828 lr=2.67e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:42] [ep_summary] ep=24/100 val_live=0.9444/0.9450 val_ema=0.6790/0.6497 test77_live=0.6942/0.6586 test77_diag_ema=0.4029/0.3275 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage2[10,50] p=0.70 ep_time=10.4s
+[18:09:42] [save] best_sourceval_ema val_acc_ema=0.6790 source_val_live=0.9444/0.9450 source_val_ema=0.6790/0.6497 ep=24
+[18:09:42] [save] best_sourcequalified77_ema ep=24 source_val_live=0.9444/0.9450 source_val_ema=0.6790/0.6497 test77_ema=0.4029/0.3275
+[18:09:42] [train] epoch 25/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:09:42] [train] ep=25 step=001/40 ce=0.3159 sc=0.6382 mi=0.0582 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.67e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:44] [train] ep=25 step=010/40 ce=0.5639 sc=0.7229 mi=0.0674 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.66e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:46] [train] ep=25 step=020/40 ce=0.6897 sc=0.8508 mi=0.0666 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9781 lr=2.65e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:47] [train] ep=25 step=030/40 ce=0.6270 sc=0.8677 mi=0.0657 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9812 lr=2.64e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:49] [train] ep=25 step=040/40 ce=0.6513 sc=0.8920 mi=0.0660 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9766 lr=2.64e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:52] [ep_summary] ep=25/100 val_live=0.9259/0.9260 val_ema=0.7037/0.6803 test77_live=0.7734/0.7633 test77_diag_ema=0.4137/0.3402 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.2s
+[18:09:52] [save] best_sourceval_ema val_acc_ema=0.7037 source_val_live=0.9259/0.9260 source_val_ema=0.7037/0.6803 ep=25
+[18:09:52] [save] best_sourcequalified77_ema ep=25 source_val_live=0.9259/0.9260 source_val_ema=0.7037/0.6803 test77_ema=0.4137/0.3402
+[18:09:52] [train] epoch 26/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:09:52] [train] ep=26 step=001/40 ce=0.2944 sc=0.7612 mi=0.0588 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.64e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:54] [train] ep=26 step=010/40 ce=0.6899 sc=0.8952 mi=0.0628 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9688 lr=2.63e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:56] [train] ep=26 step=020/40 ce=0.6744 sc=0.8742 mi=0.0625 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9750 lr=2.62e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:57] [train] ep=26 step=030/40 ce=0.6738 sc=0.9102 mi=0.0630 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9750 lr=2.61e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:09:59] [train] ep=26 step=040/40 ce=0.6403 sc=0.8998 mi=0.0631 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9766 lr=2.60e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:02] [ep_summary] ep=26/100 val_live=0.9506/0.9519 val_ema=0.7222/0.7011 test77_live=0.7050/0.6663 test77_diag_ema=0.4173/0.3493 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:10:02] [save] best_sourceval_ema val_acc_ema=0.7222 source_val_live=0.9506/0.9519 source_val_ema=0.7222/0.7011 ep=26
+[18:10:02] [save] best_sourcequalified77_ema ep=26 source_val_live=0.9506/0.9519 source_val_ema=0.7222/0.7011 test77_ema=0.4173/0.3493
+[18:10:02] [train] epoch 27/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:10:02] [train] ep=27 step=001/40 ce=1.1499 sc=0.5188 mi=0.0678 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9375 lr=2.60e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:04] [train] ep=27 step=010/40 ce=0.6565 sc=0.8636 mi=0.0619 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9750 lr=2.60e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:06] [train] ep=27 step=020/40 ce=0.6014 sc=0.8624 mi=0.0629 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9750 lr=2.59e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:07] [train] ep=27 step=030/40 ce=0.5506 sc=0.8110 mi=0.0638 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9792 lr=2.58e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:09] [train] ep=27 step=040/40 ce=0.5574 sc=0.8687 mi=0.0628 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9781 lr=2.57e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:12] [ep_summary] ep=27/100 val_live=0.9568/0.9576 val_ema=0.7407/0.7300 test77_live=0.6799/0.6608 test77_diag_ema=0.4173/0.3520 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:10:12] [save] best_sourceval_ema val_acc_ema=0.7407 source_val_live=0.9568/0.9576 source_val_ema=0.7407/0.7300 ep=27
+[18:10:12] [save] best_sourcequalified77_ema ep=27 source_val_live=0.9568/0.9576 source_val_ema=0.7407/0.7300 test77_ema=0.4173/0.3520
+[18:10:12] [train] epoch 28/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:10:12] [train] ep=28 step=001/40 ce=0.2863 sc=1.1634 mi=0.0672 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.57e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:14] [train] ep=28 step=010/40 ce=0.4161 sc=0.8454 mi=0.0657 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.56e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:16] [train] ep=28 step=020/40 ce=0.4077 sc=0.8498 mi=0.0642 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.55e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:17] [train] ep=28 step=030/40 ce=0.4275 sc=0.8527 mi=0.0655 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9917 lr=2.54e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:19] [train] ep=28 step=040/40 ce=0.3993 sc=0.8263 mi=0.0645 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.54e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:22] [ep_summary] ep=28/100 val_live=0.9630/0.9627 val_ema=0.7593/0.7459 test77_live=0.5971/0.5552 test77_diag_ema=0.4460/0.3740 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.0s
+[18:10:22] [save] best_sourceval_ema val_acc_ema=0.7593 source_val_live=0.9630/0.9627 source_val_ema=0.7593/0.7459 ep=28
+[18:10:22] [save] best_sourcequalified77_ema ep=28 source_val_live=0.9630/0.9627 source_val_ema=0.7593/0.7459 test77_ema=0.4460/0.3740
+[18:10:22] [train] epoch 29/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:10:22] [train] ep=29 step=001/40 ce=0.3972 sc=0.4828 mi=0.0728 dn=0.0000 v13=0.0015 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.53e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:24] [train] ep=29 step=010/40 ce=0.5155 sc=0.8179 mi=0.0629 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.53e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:25] [train] ep=29 step=020/40 ce=0.5564 sc=0.8444 mi=0.0630 dn=0.0000 v13=0.0012 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9844 lr=2.52e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:27] [train] ep=29 step=030/40 ce=0.4735 sc=0.8683 mi=0.0622 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9896 lr=2.51e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:29] [train] ep=29 step=040/40 ce=0.4703 sc=0.8459 mi=0.0619 dn=0.0000 v13=0.0012 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.50e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:32] [ep_summary] ep=29/100 val_live=0.9506/0.9508 val_ema=0.8086/0.8051 test77_live=0.7302/0.7226 test77_diag_ema=0.4568/0.3823 v13=0.0012 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:10:32] [save] best_sourceval_ema val_acc_ema=0.8086 source_val_live=0.9506/0.9508 source_val_ema=0.8086/0.8051 ep=29
+[18:10:32] [save] best_sourcequalified77_ema ep=29 source_val_live=0.9506/0.9508 source_val_ema=0.8086/0.8051 test77_ema=0.4568/0.3823
+[18:10:32] [train] epoch 30/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:10:32] [train] ep=30 step=001/40 ce=1.2961 sc=1.8911 mi=0.0691 dn=0.0000 v13=0.0014 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9375 lr=2.50e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:34] [train] ep=30 step=010/40 ce=0.6075 sc=0.9418 mi=0.0636 dn=0.0000 v13=0.0012 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9812 lr=2.49e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:35] [train] ep=30 step=020/40 ce=0.6206 sc=0.9334 mi=0.0627 dn=0.0000 v13=0.0011 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9750 lr=2.48e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:37] [train] ep=30 step=030/40 ce=0.5430 sc=0.8878 mi=0.0624 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9812 lr=2.47e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:39] [train] ep=30 step=040/40 ce=0.5005 sc=0.8598 mi=0.0619 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9859 lr=2.46e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:42] [pool] check ep=030/100 source_val_acc_ema=0.8395 threshold=0.90
+[18:10:42] [pool] ep=030 SKIP (source_val_acc_ema=0.8395 < 0.90)
+[18:10:42] [ep_summary] ep=30/100 val_live=0.9630/0.9627 val_ema=0.8395/0.8407 test77_live=0.6475/0.5987 test77_diag_ema=0.4676/0.3909 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.1s
+[18:10:42] [save] best_sourceval_ema val_acc_ema=0.8395 source_val_live=0.9630/0.9627 source_val_ema=0.8395/0.8407 ep=30
+[18:10:42] [save] best_sourcequalified77_ema ep=30 source_val_live=0.9630/0.9627 source_val_ema=0.8395/0.8407 test77_ema=0.4676/0.3909
+[18:10:42] [strict77_monitor] ep=30 best_source_epoch=30 source_val_ema=0.8395/0.8407 test77_ema_diag=0.4676/0.3909 sourcequalified_count=30 best_sourcequalified77_epoch=30 source_val_ema=0.8395/0.8407 test77_ema=0.4676/0.3909
+[18:10:42] [train] epoch 31/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:10:42] [train] ep=31 step=001/40 ce=0.2966 sc=0.4482 mi=0.0602 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.46e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:44] [train] ep=31 step=010/40 ce=0.4793 sc=0.8129 mi=0.0618 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.45e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:46] [train] ep=31 step=020/40 ce=0.4521 sc=0.7607 mi=0.0636 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=2.44e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:47] [train] ep=31 step=030/40 ce=0.4284 sc=0.7779 mi=0.0629 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9917 lr=2.43e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:49] [train] ep=31 step=040/40 ce=0.4671 sc=0.8069 mi=0.0620 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.43e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:52] [ep_summary] ep=31/100 val_live=0.9753/0.9749 val_ema=0.8580/0.8580 test77_live=0.6655/0.6182 test77_diag_ema=0.4784/0.3974 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:10:52] [save] best_sourceval_ema val_acc_ema=0.8580 source_val_live=0.9753/0.9749 source_val_ema=0.8580/0.8580 ep=31
+[18:10:52] [save] best_sourcequalified77_ema ep=31 source_val_live=0.9753/0.9749 source_val_ema=0.8580/0.8580 test77_ema=0.4784/0.3974
+[18:10:52] [train] epoch 32/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:10:52] [train] ep=32 step=001/40 ce=0.2780 sc=0.9950 mi=0.0565 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.42e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:54] [train] ep=32 step=010/40 ce=0.3382 sc=0.8227 mi=0.0642 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.42e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:55] [train] ep=32 step=020/40 ce=0.4068 sc=0.8500 mi=0.0639 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=2.41e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:57] [train] ep=32 step=030/40 ce=0.4060 sc=0.8014 mi=0.0622 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9896 lr=2.40e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:10:59] [train] ep=32 step=040/40 ce=0.4293 sc=0.8222 mi=0.0615 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.39e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:02] [ep_summary] ep=32/100 val_live=0.9444/0.9466 val_ema=0.8765/0.8775 test77_live=0.6079/0.5654 test77_diag_ema=0.4928/0.4075 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.8s
+[18:11:02] [save] best_sourceval_ema val_acc_ema=0.8765 source_val_live=0.9444/0.9466 source_val_ema=0.8765/0.8775 ep=32
+[18:11:02] [save] best_sourcequalified77_ema ep=32 source_val_live=0.9444/0.9466 source_val_ema=0.8765/0.8775 test77_ema=0.4928/0.4075
+[18:11:02] [train] epoch 33/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:11:02] [train] ep=33 step=001/40 ce=0.2747 sc=0.7348 mi=0.0693 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.39e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:04] [train] ep=33 step=010/40 ce=0.3773 sc=0.7863 mi=0.0644 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.38e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:05] [train] ep=33 step=020/40 ce=0.4026 sc=0.7706 mi=0.0647 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=2.37e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:07] [train] ep=33 step=030/40 ce=0.4297 sc=0.8017 mi=0.0634 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9896 lr=2.36e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:09] [train] ep=33 step=040/40 ce=0.3974 sc=0.7727 mi=0.0622 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9922 lr=2.35e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:12] [ep_summary] ep=33/100 val_live=0.9444/0.9454 val_ema=0.8827/0.8830 test77_live=0.6871/0.6547 test77_diag_ema=0.5036/0.4160 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.8s
+[18:11:12] [save] best_sourceval_ema val_acc_ema=0.8827 source_val_live=0.9444/0.9454 source_val_ema=0.8827/0.8830 ep=33
+[18:11:12] [save] best_sourcequalified77_ema ep=33 source_val_live=0.9444/0.9454 source_val_ema=0.8827/0.8830 test77_ema=0.5036/0.4160
+[18:11:12] [train] epoch 34/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:11:12] [train] ep=34 step=001/40 ce=1.1108 sc=1.1358 mi=0.0542 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9375 lr=2.35e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:13] [train] ep=34 step=010/40 ce=0.5513 sc=0.8828 mi=0.0604 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9750 lr=2.34e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:15] [train] ep=34 step=020/40 ce=0.5037 sc=0.8753 mi=0.0601 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9781 lr=2.33e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:17] [train] ep=34 step=030/40 ce=0.4489 sc=0.8396 mi=0.0598 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9833 lr=2.32e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:19] [train] ep=34 step=040/40 ce=0.4430 sc=0.8202 mi=0.0608 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9859 lr=2.31e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:21] [ep_summary] ep=34/100 val_live=0.9383/0.9386 val_ema=0.9012/0.9005 test77_live=0.7518/0.7373 test77_diag_ema=0.5072/0.4181 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.8s
+[18:11:21] [save] best_sourceval_ema val_acc_ema=0.9012 source_val_live=0.9383/0.9386 source_val_ema=0.9012/0.9005 ep=34
+[18:11:22] [save] best_sourcequalified77_ema ep=34 source_val_live=0.9383/0.9386 source_val_ema=0.9012/0.9005 test77_ema=0.5072/0.4181
+[18:11:22] [train] epoch 35/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:11:22] [train] ep=35 step=001/40 ce=0.2661 sc=0.8874 mi=0.0675 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.31e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:23] [train] ep=35 step=010/40 ce=0.4941 sc=0.9362 mi=0.0599 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9812 lr=2.30e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:25] [train] ep=35 step=020/40 ce=0.5030 sc=0.8669 mi=0.0590 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9844 lr=2.29e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:27] [train] ep=35 step=030/40 ce=0.4480 sc=0.8121 mi=0.0591 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9896 lr=2.28e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:29] [train] ep=35 step=040/40 ce=0.4534 sc=0.8556 mi=0.0593 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.27e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:31] [ep_summary] ep=35/100 val_live=0.9568/0.9569 val_ema=0.9198/0.9219 test77_live=0.6619/0.6332 test77_diag_ema=0.5072/0.4181 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:11:31] [save] best_sourceval_ema val_acc_ema=0.9198 source_val_live=0.9568/0.9569 source_val_ema=0.9198/0.9219 ep=35
+[18:11:31] [train] epoch 36/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:11:32] [train] ep=36 step=001/40 ce=0.2690 sc=0.6221 mi=0.0710 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.26e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:33] [train] ep=36 step=010/40 ce=0.3861 sc=0.7536 mi=0.0639 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.25e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:35] [train] ep=36 step=020/40 ce=0.4304 sc=0.8088 mi=0.0619 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=2.24e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:37] [train] ep=36 step=030/40 ce=0.4575 sc=0.8151 mi=0.0618 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9896 lr=2.23e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:39] [train] ep=36 step=040/40 ce=0.4563 sc=0.8200 mi=0.0618 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=2.22e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:41] [ep_summary] ep=36/100 val_live=0.9444/0.9445 val_ema=0.9321/0.9339 test77_live=0.7122/0.6637 test77_diag_ema=0.5108/0.4218 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:11:41] [save] best_sourceval_ema val_acc_ema=0.9321 source_val_live=0.9444/0.9445 source_val_ema=0.9321/0.9339 ep=36
+[18:11:41] [save] best_sourcequalified77_ema ep=36 source_val_live=0.9444/0.9445 source_val_ema=0.9321/0.9339 test77_ema=0.5108/0.4218
+[18:11:41] [train] epoch 37/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:11:41] [train] ep=37 step=001/40 ce=0.3393 sc=0.8116 mi=0.0612 dn=0.0000 v13=0.0003 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.22e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:43] [train] ep=37 step=010/40 ce=0.3993 sc=0.9771 mi=0.0601 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.21e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:45] [train] ep=37 step=020/40 ce=0.3684 sc=0.8372 mi=0.0597 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=2.20e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:47] [train] ep=37 step=030/40 ce=0.3939 sc=0.8356 mi=0.0602 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.19e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:48] [train] ep=37 step=040/40 ce=0.4196 sc=0.8047 mi=0.0599 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=2.18e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:51] [ep_summary] ep=37/100 val_live=0.9753/0.9758 val_ema=0.9383/0.9395 test77_live=0.7734/0.7491 test77_diag_ema=0.5108/0.4205 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:11:51] [save] best_sourceval_ema val_acc_ema=0.9383 source_val_live=0.9753/0.9758 source_val_ema=0.9383/0.9395 ep=37
+[18:11:51] [train] epoch 38/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:11:51] [train] ep=38 step=001/40 ce=0.2645 sc=0.6007 mi=0.0613 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.18e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:53] [train] ep=38 step=010/40 ce=0.3756 sc=0.8680 mi=0.0600 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.17e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:55] [train] ep=38 step=020/40 ce=0.4332 sc=0.8871 mi=0.0611 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=2.16e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:57] [train] ep=38 step=030/40 ce=0.4242 sc=0.8250 mi=0.0597 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9896 lr=2.15e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:11:59] [train] ep=38 step=040/40 ce=0.4068 sc=0.8220 mi=0.0593 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=2.14e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:02] [ep_summary] ep=38/100 val_live=0.9444/0.9452 val_ema=0.9444/0.9463 test77_live=0.6691/0.6639 test77_diag_ema=0.5108/0.4202 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.5s
+[18:12:02] [save] best_sourceval_ema val_acc_ema=0.9444 source_val_live=0.9444/0.9452 source_val_ema=0.9444/0.9463 ep=38
+[18:12:02] [train] epoch 39/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:12:02] [train] ep=39 step=001/40 ce=0.2664 sc=0.4373 mi=0.0573 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.14e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:04] [train] ep=39 step=010/40 ce=0.2827 sc=0.6284 mi=0.0572 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.13e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:06] [train] ep=39 step=020/40 ce=0.3944 sc=0.7061 mi=0.0603 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.11e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:08] [train] ep=39 step=030/40 ce=0.4407 sc=0.8003 mi=0.0604 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.10e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:10] [train] ep=39 step=040/40 ce=0.3998 sc=0.7910 mi=0.0601 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=2.09e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:13] [ep_summary] ep=39/100 val_live=0.9568/0.9572 val_ema=0.9506/0.9523 test77_live=0.7050/0.6651 test77_diag_ema=0.5216/0.4298 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=11.0s
+[18:12:13] [save] best_sourceval_ema val_acc_ema=0.9506 source_val_live=0.9568/0.9572 source_val_ema=0.9506/0.9523 ep=39
+[18:12:13] [save] best_sourcequalified77_ema ep=39 source_val_live=0.9568/0.9572 source_val_ema=0.9506/0.9523 test77_ema=0.5216/0.4298
+[18:12:13] [train] epoch 40/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:12:13] [train] ep=40 step=001/40 ce=0.2617 sc=1.0202 mi=0.0593 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.09e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:15] [train] ep=40 step=010/40 ce=0.3899 sc=0.7877 mi=0.0600 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.08e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:17] [train] ep=40 step=020/40 ce=0.4022 sc=0.8019 mi=0.0610 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=2.07e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:19] [train] ep=40 step=030/40 ce=0.3650 sc=0.7723 mi=0.0620 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9917 lr=2.06e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:21] [train] ep=40 step=040/40 ce=0.3506 sc=0.7584 mi=0.0619 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.05e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:24] [pool] check ep=040/100 source_val_acc_ema=0.9568 threshold=0.90
+[18:12:25] [pool] ep=040 ADDED src_val=0.9568/0.9582 dev77=0.5143/0.4250 final77=0.5252/0.4319
+[18:12:25] [pool] running best ep=040 dev77_f1=0.4250 final77_f1=0.4319 (pool_size=1)
+[18:12:25] [ep_summary] ep=40/100 val_live=0.9691/0.9697 val_ema=0.9568/0.9582 test77_live=0.7158/0.6616 test77_diag_ema=0.5252/0.4319 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=12.4s
+[18:12:25] [save] best_sourceval_ema val_acc_ema=0.9568 source_val_live=0.9691/0.9697 source_val_ema=0.9568/0.9582 ep=40
+[18:12:25] [save] best_sourcequalified77_ema ep=40 source_val_live=0.9691/0.9697 source_val_ema=0.9568/0.9582 test77_ema=0.5252/0.4319
+[18:12:25] [strict77_monitor] ep=40 best_source_epoch=40 source_val_ema=0.9568/0.9582 test77_ema_diag=0.5252/0.4319 sourcequalified_count=40 best_sourcequalified77_epoch=40 source_val_ema=0.9568/0.9582 test77_ema=0.5252/0.4319
+[18:12:25] [train] epoch 41/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:12:25] [train] ep=41 step=001/40 ce=0.2653 sc=0.9661 mi=0.0540 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.05e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:27] [train] ep=41 step=010/40 ce=0.2853 sc=0.7587 mi=0.0585 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.04e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:29] [train] ep=41 step=020/40 ce=0.3133 sc=0.7245 mi=0.0582 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=2.02e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:30] [train] ep=41 step=030/40 ce=0.3216 sc=0.7104 mi=0.0579 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9958 lr=2.01e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:32] [train] ep=41 step=040/40 ce=0.3419 sc=0.7599 mi=0.0584 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:35] [ep_summary] ep=41/100 val_live=0.9691/0.9690 val_ema=0.9568/0.9582 test77_live=0.7194/0.6764 test77_diag_ema=0.5252/0.4283 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:12:35] [train] epoch 42/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:12:35] [train] ep=42 step=001/40 ce=0.2649 sc=0.8435 mi=0.0615 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:37] [train] ep=42 step=010/40 ce=0.2912 sc=0.7646 mi=0.0577 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.99e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:39] [train] ep=42 step=020/40 ce=0.3222 sc=0.8129 mi=0.0597 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.98e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:40] [train] ep=42 step=030/40 ce=0.3031 sc=0.7995 mi=0.0593 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=1.97e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:42] [train] ep=42 step=040/40 ce=0.2956 sc=0.7721 mi=0.0592 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=1.96e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:45] [ep_summary] ep=42/100 val_live=0.9630/0.9635 val_ema=0.9506/0.9521 test77_live=0.6439/0.5845 test77_diag_ema=0.5324/0.4355 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:12:45] [save] best_sourcequalified77_ema ep=42 source_val_live=0.9630/0.9635 source_val_ema=0.9506/0.9521 test77_ema=0.5324/0.4355
+[18:12:45] [train] epoch 43/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:12:45] [train] ep=43 step=001/40 ce=0.2630 sc=0.8168 mi=0.0614 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.95e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:47] [train] ep=43 step=010/40 ce=0.3360 sc=0.8429 mi=0.0565 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.94e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:48] [train] ep=43 step=020/40 ce=0.4002 sc=0.8739 mi=0.0582 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=1.93e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:50] [train] ep=43 step=030/40 ce=0.4065 sc=0.8612 mi=0.0592 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9896 lr=1.92e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:52] [train] ep=43 step=040/40 ce=0.3781 sc=0.8803 mi=0.0598 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9922 lr=1.91e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:55] [ep_summary] ep=43/100 val_live=0.9630/0.9635 val_ema=0.9506/0.9521 test77_live=0.6295/0.6076 test77_diag_ema=0.5396/0.4465 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.8s
+[18:12:55] [save] best_sourcequalified77_ema ep=43 source_val_live=0.9630/0.9635 source_val_ema=0.9506/0.9521 test77_ema=0.5396/0.4465
+[18:12:55] [train] epoch 44/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:12:55] [train] ep=44 step=001/40 ce=0.2668 sc=1.1320 mi=0.0616 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.91e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:57] [train] ep=44 step=010/40 ce=0.2889 sc=0.7737 mi=0.0600 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.90e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:12:59] [train] ep=44 step=020/40 ce=0.2863 sc=0.8432 mi=0.0603 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.89e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:01] [train] ep=44 step=030/40 ce=0.2930 sc=0.8602 mi=0.0606 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.87e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:03] [train] ep=44 step=040/40 ce=0.3137 sc=0.8154 mi=0.0598 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.86e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:06] [ep_summary] ep=44/100 val_live=0.9568/0.9572 val_ema=0.9444/0.9460 test77_live=0.6655/0.6403 test77_diag_ema=0.5504/0.4644 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.9s
+[18:13:06] [save] best_sourcequalified77_ema ep=44 source_val_live=0.9568/0.9572 source_val_ema=0.9444/0.9460 test77_ema=0.5504/0.4644
+[18:13:06] [train] epoch 45/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:13:06] [train] ep=45 step=001/40 ce=0.2766 sc=0.7721 mi=0.0671 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.86e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:08] [train] ep=45 step=010/40 ce=0.2762 sc=0.9222 mi=0.0640 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.85e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:10] [train] ep=45 step=020/40 ce=0.2769 sc=0.8244 mi=0.0629 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.84e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:12] [train] ep=45 step=030/40 ce=0.2727 sc=0.7787 mi=0.0623 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.83e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:14] [train] ep=45 step=040/40 ce=0.2773 sc=0.7652 mi=0.0610 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.81e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:17] [ep_summary] ep=45/100 val_live=0.9444/0.9440 val_ema=0.9444/0.9460 test77_live=0.6727/0.6436 test77_diag_ema=0.5647/0.4895 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=11.1s
+[18:13:17] [save] best_sourcequalified77_ema ep=45 source_val_live=0.9444/0.9440 source_val_ema=0.9444/0.9460 test77_ema=0.5647/0.4895
+[18:13:17] [train] epoch 46/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:13:17] [train] ep=46 step=001/40 ce=0.2607 sc=0.7876 mi=0.0537 dn=0.0000 v13=0.0003 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.81e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:19] [train] ep=46 step=010/40 ce=0.3772 sc=0.8286 mi=0.0599 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.80e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:21] [train] ep=46 step=020/40 ce=0.4010 sc=0.8960 mi=0.0598 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=1.79e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:23] [train] ep=46 step=030/40 ce=0.4029 sc=0.8627 mi=0.0597 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9896 lr=1.78e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:25] [train] ep=46 step=040/40 ce=0.3869 sc=0.8593 mi=0.0588 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=1.77e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:27] [ep_summary] ep=46/100 val_live=0.9568/0.9567 val_ema=0.9506/0.9516 test77_live=0.7122/0.6986 test77_diag_ema=0.5647/0.4902 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.5s
+[18:13:27] [save] best_sourcequalified77_ema ep=46 source_val_live=0.9568/0.9567 source_val_ema=0.9506/0.9516 test77_ema=0.5647/0.4902
+[18:13:27] [train] epoch 47/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:13:27] [train] ep=47 step=001/40 ce=0.2635 sc=0.6324 mi=0.0536 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.77e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:29] [train] ep=47 step=010/40 ce=0.4281 sc=0.7703 mi=0.0555 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=1.76e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:31] [train] ep=47 step=020/40 ce=0.3987 sc=0.7687 mi=0.0572 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=1.74e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:33] [train] ep=47 step=030/40 ce=0.3790 sc=0.7857 mi=0.0580 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9917 lr=1.73e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:35] [train] ep=47 step=040/40 ce=0.3529 sc=0.7878 mi=0.0584 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.72e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:37] [ep_summary] ep=47/100 val_live=0.9691/0.9687 val_ema=0.9506/0.9516 test77_live=0.7338/0.7067 test77_diag_ema=0.5683/0.4948 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:13:37] [save] best_sourcequalified77_ema ep=47 source_val_live=0.9691/0.9687 source_val_ema=0.9506/0.9516 test77_ema=0.5683/0.4948
+[18:13:37] [train] epoch 48/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:13:37] [train] ep=48 step=001/40 ce=0.2611 sc=1.0564 mi=0.0554 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.72e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:39] [train] ep=48 step=010/40 ce=0.2648 sc=0.7163 mi=0.0573 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.71e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:41] [train] ep=48 step=020/40 ce=0.3245 sc=0.7697 mi=0.0567 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.69e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:43] [train] ep=48 step=030/40 ce=0.3208 sc=0.7629 mi=0.0579 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=1.68e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:44] [train] ep=48 step=040/40 ce=0.3144 sc=0.7807 mi=0.0574 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=1.67e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:47] [ep_summary] ep=48/100 val_live=0.9568/0.9563 val_ema=0.9506/0.9516 test77_live=0.7374/0.7139 test77_diag_ema=0.5899/0.5293 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:13:47] [save] best_sourcequalified77_ema ep=48 source_val_live=0.9568/0.9563 source_val_ema=0.9506/0.9516 test77_ema=0.5899/0.5293
+[18:13:47] [train] epoch 49/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:13:47] [train] ep=49 step=001/40 ce=0.2587 sc=0.6154 mi=0.0577 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.67e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:49] [train] ep=49 step=010/40 ce=0.2684 sc=0.7113 mi=0.0581 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.66e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:51] [train] ep=49 step=020/40 ce=0.3081 sc=0.7448 mi=0.0565 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.65e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:53] [train] ep=49 step=030/40 ce=0.3272 sc=0.7468 mi=0.0571 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9958 lr=1.63e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:54] [train] ep=49 step=040/40 ce=0.3125 sc=0.7204 mi=0.0569 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.62e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:57] [ep_summary] ep=49/100 val_live=0.9444/0.9440 val_ema=0.9506/0.9516 test77_live=0.6691/0.6447 test77_diag_ema=0.6007/0.5474 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:13:57] [save] best_sourcequalified77_ema ep=49 source_val_live=0.9444/0.9440 source_val_ema=0.9506/0.9516 test77_ema=0.6007/0.5474
+[18:13:57] [train] epoch 50/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:13:57] [train] ep=50 step=001/40 ce=0.2642 sc=0.7480 mi=0.0553 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.62e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:13:59] [train] ep=50 step=010/40 ce=0.2687 sc=0.7016 mi=0.0577 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.61e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:01] [train] ep=50 step=020/40 ce=0.3278 sc=0.7873 mi=0.0582 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.60e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:03] [train] ep=50 step=030/40 ce=0.3099 sc=0.8272 mi=0.0587 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=1.59e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:05] [train] ep=50 step=040/40 ce=0.2980 sc=0.8017 mi=0.0589 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=1.57e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:08] [pool] check ep=050/100 source_val_acc_ema=0.9506 threshold=0.90
+[18:14:09] [pool] ep=050 ADDED src_val=0.9506/0.9516 dev77=0.5786/0.5149 final77=0.6151/0.5723
+[18:14:09] [pool] running best ep=050 dev77_f1=0.5149 final77_f1=0.5723 (pool_size=2)
+[18:14:09] [ep_summary] ep=50/100 val_live=0.9630/0.9628 val_ema=0.9506/0.9516 test77_live=0.6942/0.6773 test77_diag_ema=0.6151/0.5723 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=11.8s
+[18:14:09] [save] best_sourcequalified77_ema ep=50 source_val_live=0.9630/0.9628 source_val_ema=0.9506/0.9516 test77_ema=0.6151/0.5723
+[18:14:09] [strict77_monitor] ep=50 best_source_epoch=40 source_val_ema=0.9568/0.9582 test77_ema_diag=0.5252/0.4319 sourcequalified_count=50 best_sourcequalified77_epoch=50 source_val_ema=0.9506/0.9516 test77_ema=0.6151/0.5723
+[18:14:09] [train] epoch 51/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:14:09] [train] ep=51 step=001/40 ce=0.2600 sc=0.2621 mi=0.0524 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.57e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:11] [train] ep=51 step=010/40 ce=0.3714 sc=0.8080 mi=0.0588 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.56e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:13] [train] ep=51 step=020/40 ce=0.3757 sc=0.8659 mi=0.0572 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.55e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:15] [train] ep=51 step=030/40 ce=0.3472 sc=0.8428 mi=0.0587 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9958 lr=1.54e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:16] [train] ep=51 step=040/40 ce=0.3307 sc=0.8139 mi=0.0582 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.53e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:19] [ep_summary] ep=51/100 val_live=0.9753/0.9749 val_ema=0.9630/0.9637 test77_live=0.7302/0.7088 test77_diag_ema=0.6223/0.5823 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.2s
+[18:14:19] [save] best_sourceval_ema val_acc_ema=0.9630 source_val_live=0.9753/0.9749 source_val_ema=0.9630/0.9637 ep=51
+[18:14:19] [save] best_sourcequalified77_ema ep=51 source_val_live=0.9753/0.9749 source_val_ema=0.9630/0.9637 test77_ema=0.6223/0.5823
+[18:14:19] [train] epoch 52/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:14:19] [train] ep=52 step=001/40 ce=0.2632 sc=0.8794 mi=0.0500 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.52e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:21] [train] ep=52 step=010/40 ce=0.3244 sc=0.7800 mi=0.0550 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.51e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:23] [train] ep=52 step=020/40 ce=0.3064 sc=0.8034 mi=0.0564 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.50e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:25] [train] ep=52 step=030/40 ce=0.2978 sc=0.7875 mi=0.0558 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.49e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:27] [train] ep=52 step=040/40 ce=0.2888 sc=0.7764 mi=0.0554 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.48e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:30] [ep_summary] ep=52/100 val_live=0.9506/0.9504 val_ema=0.9630/0.9637 test77_live=0.7158/0.6613 test77_diag_ema=0.6367/0.5977 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.9s
+[18:14:30] [save] best_sourcequalified77_ema ep=52 source_val_live=0.9506/0.9504 source_val_ema=0.9630/0.9637 test77_ema=0.6367/0.5977
+[18:14:30] [train] epoch 53/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:14:30] [train] ep=53 step=001/40 ce=0.2647 sc=0.6199 mi=0.0660 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.48e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:32] [train] ep=53 step=010/40 ce=0.3689 sc=0.6927 mi=0.0554 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.46e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:34] [train] ep=53 step=020/40 ce=0.3162 sc=0.6796 mi=0.0560 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.45e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:36] [train] ep=53 step=030/40 ce=0.3178 sc=0.6985 mi=0.0574 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9958 lr=1.44e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:38] [train] ep=53 step=040/40 ce=0.3287 sc=0.7194 mi=0.0576 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9953 lr=1.43e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:41] [ep_summary] ep=53/100 val_live=0.9691/0.9687 val_ema=0.9630/0.9637 test77_live=0.7338/0.7098 test77_diag_ema=0.6547/0.6206 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.9s
+[18:14:41] [save] best_sourcequalified77_ema ep=53 source_val_live=0.9691/0.9687 source_val_ema=0.9630/0.9637 test77_ema=0.6547/0.6206
+[18:14:41] [train] epoch 54/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:14:41] [train] ep=54 step=001/40 ce=0.4865 sc=0.9508 mi=0.0548 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.43e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:43] [train] ep=54 step=010/40 ce=0.4907 sc=1.0759 mi=0.0566 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=1.42e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:45] [train] ep=54 step=020/40 ce=0.3816 sc=0.9505 mi=0.0564 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.40e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:47] [train] ep=54 step=030/40 ce=0.3739 sc=0.8591 mi=0.0559 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.39e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:49] [train] ep=54 step=040/40 ce=0.3502 sc=0.8365 mi=0.0560 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9953 lr=1.38e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:52] [ep_summary] ep=54/100 val_live=0.9753/0.9749 val_ema=0.9630/0.9637 test77_live=0.7194/0.6903 test77_diag_ema=0.6727/0.6433 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=11.0s
+[18:14:52] [save] best_sourcequalified77_ema ep=54 source_val_live=0.9753/0.9749 source_val_ema=0.9630/0.9637 test77_ema=0.6727/0.6433
+[18:14:52] [train] epoch 55/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:14:52] [train] ep=55 step=001/40 ce=0.2578 sc=0.8744 mi=0.0613 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.38e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:54] [train] ep=55 step=010/40 ce=0.3122 sc=0.7433 mi=0.0584 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.37e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:56] [train] ep=55 step=020/40 ce=0.3099 sc=0.7522 mi=0.0572 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.36e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:57] [train] ep=55 step=030/40 ce=0.2980 sc=0.7599 mi=0.0569 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=1.34e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:14:59] [train] ep=55 step=040/40 ce=0.3003 sc=0.7300 mi=0.0571 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=1.33e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:02] [ep_summary] ep=55/100 val_live=0.9630/0.9625 val_ema=0.9630/0.9637 test77_live=0.6439/0.6160 test77_diag_ema=0.6871/0.6590 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.0s
+[18:15:02] [save] best_sourcequalified77_ema ep=55 source_val_live=0.9630/0.9625 source_val_ema=0.9630/0.9637 test77_ema=0.6871/0.6590
+[18:15:02] [train] epoch 56/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:15:02] [train] ep=56 step=001/40 ce=0.2612 sc=0.9321 mi=0.0610 dn=0.0000 v13=0.0003 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.33e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:04] [train] ep=56 step=010/40 ce=0.3283 sc=0.8631 mi=0.0592 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.32e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:06] [train] ep=56 step=020/40 ce=0.3239 sc=0.8151 mi=0.0564 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.31e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:08] [train] ep=56 step=030/40 ce=0.3331 sc=0.8444 mi=0.0559 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.30e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:09] [train] ep=56 step=040/40 ce=0.3149 sc=0.8202 mi=0.0563 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9953 lr=1.28e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:12] [ep_summary] ep=56/100 val_live=0.9630/0.9625 val_ema=0.9630/0.9637 test77_live=0.6799/0.6414 test77_diag_ema=0.6906/0.6596 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.2s
+[18:15:12] [save] best_sourcequalified77_ema ep=56 source_val_live=0.9630/0.9625 source_val_ema=0.9630/0.9637 test77_ema=0.6906/0.6596
+[18:15:12] [train] epoch 57/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:15:12] [train] ep=57 step=001/40 ce=0.8484 sc=0.7854 mi=0.0614 dn=0.0000 v13=0.0010 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9375 lr=1.28e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:14] [train] ep=57 step=010/40 ce=0.3206 sc=0.6760 mi=0.0552 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.27e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:16] [train] ep=57 step=020/40 ce=0.3125 sc=0.7184 mi=0.0549 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.26e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:18] [train] ep=57 step=030/40 ce=0.3286 sc=0.7579 mi=0.0555 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.25e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:20] [train] ep=57 step=040/40 ce=0.3156 sc=0.7646 mi=0.0555 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9953 lr=1.24e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:23] [ep_summary] ep=57/100 val_live=0.9815/0.9810 val_ema=0.9630/0.9637 test77_live=0.7230/0.6931 test77_diag_ema=0.7014/0.6727 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.6s
+[18:15:23] [save] best_sourcequalified77_ema ep=57 source_val_live=0.9815/0.9810 source_val_ema=0.9630/0.9637 test77_ema=0.7014/0.6727
+[18:15:23] [train] epoch 58/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:15:23] [train] ep=58 step=001/40 ce=0.2606 sc=0.8323 mi=0.0590 dn=0.0000 v13=0.0009 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.23e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:25] [train] ep=58 step=010/40 ce=0.2695 sc=0.8078 mi=0.0548 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.22e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:26] [train] ep=58 step=020/40 ce=0.2700 sc=0.7359 mi=0.0546 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.21e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:28] [train] ep=58 step=030/40 ce=0.2669 sc=0.7658 mi=0.0544 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.20e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:30] [train] ep=58 step=040/40 ce=0.2669 sc=0.7698 mi=0.0549 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.19e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:33] [ep_summary] ep=58/100 val_live=0.9753/0.9749 val_ema=0.9630/0.9637 test77_live=0.7410/0.7268 test77_diag_ema=0.7194/0.6930 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:15:33] [save] best_sourcequalified77_ema ep=58 source_val_live=0.9753/0.9749 source_val_ema=0.9630/0.9637 test77_ema=0.7194/0.6930
+[18:15:33] [train] epoch 59/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:15:33] [train] ep=59 step=001/40 ce=0.2596 sc=0.6470 mi=0.0527 dn=0.0000 v13=0.0007 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.19e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:35] [train] ep=59 step=010/40 ce=0.2601 sc=0.7847 mi=0.0551 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.18e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:36] [train] ep=59 step=020/40 ce=0.2630 sc=0.7994 mi=0.0553 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.16e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:38] [train] ep=59 step=030/40 ce=0.2622 sc=0.7782 mi=0.0550 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.15e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:40] [train] ep=59 step=040/40 ce=0.2670 sc=0.7745 mi=0.0554 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.14e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:43] [ep_summary] ep=59/100 val_live=0.9815/0.9810 val_ema=0.9630/0.9637 test77_live=0.7194/0.6998 test77_diag_ema=0.7194/0.6930 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:15:43] [train] epoch 60/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:15:43] [train] ep=60 step=001/40 ce=0.2568 sc=1.0664 mi=0.0551 dn=0.0000 v13=0.0003 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.14e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:44] [train] ep=60 step=010/40 ce=0.2827 sc=0.8235 mi=0.0551 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.13e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:46] [train] ep=60 step=020/40 ce=0.3098 sc=0.8770 mi=0.0560 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.12e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:48] [train] ep=60 step=030/40 ce=0.2954 sc=0.7863 mi=0.0560 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=1.11e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:50] [train] ep=60 step=040/40 ce=0.3130 sc=0.7998 mi=0.0549 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.09e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:52] [pool] check ep=060/100 source_val_acc_ema=0.9630 threshold=0.90
+[18:15:54] [pool] ep=060 ADDED src_val=0.9630/0.9637 dev77=0.6571/0.6180 final77=0.7158/0.6897
+[18:15:54] [pool] running best ep=060 dev77_f1=0.6180 final77_f1=0.6897 (pool_size=3)
+[18:15:54] [ep_summary] ep=60/100 val_live=0.9630/0.9628 val_ema=0.9630/0.9637 test77_live=0.6835/0.6552 test77_diag_ema=0.7158/0.6897 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=11.2s
+[18:15:54] [strict77_monitor] ep=60 best_source_epoch=51 source_val_ema=0.9630/0.9637 test77_ema_diag=0.6223/0.5823 sourcequalified_count=60 best_sourcequalified77_epoch=58 source_val_ema=0.9630/0.9637 test77_ema=0.7194/0.6930
+[18:15:54] [train] epoch 61/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:15:54] [train] ep=61 step=001/40 ce=0.2603 sc=0.6458 mi=0.0543 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.09e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:56] [train] ep=61 step=010/40 ce=0.2600 sc=0.6971 mi=0.0580 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.08e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:57] [train] ep=61 step=020/40 ce=0.2932 sc=0.7704 mi=0.0566 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.07e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:15:59] [train] ep=61 step=030/40 ce=0.3168 sc=0.8017 mi=0.0555 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9958 lr=1.06e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:01] [train] ep=61 step=040/40 ce=0.3087 sc=0.7785 mi=0.0551 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.05e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:04] [ep_summary] ep=61/100 val_live=0.9506/0.9504 val_ema=0.9691/0.9697 test77_live=0.6978/0.6647 test77_diag_ema=0.7158/0.6891 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:16:04] [save] best_sourceval_ema val_acc_ema=0.9691 source_val_live=0.9506/0.9504 source_val_ema=0.9691/0.9697 ep=61
+[18:16:04] [train] epoch 62/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:16:04] [train] ep=62 step=001/40 ce=0.2651 sc=0.5396 mi=0.0592 dn=0.0000 v13=0.0002 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.05e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:05] [train] ep=62 step=010/40 ce=0.2600 sc=0.6676 mi=0.0562 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.04e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:07] [train] ep=62 step=020/40 ce=0.2607 sc=0.7086 mi=0.0555 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.02e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:09] [train] ep=62 step=030/40 ce=0.2648 sc=0.7059 mi=0.0552 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.01e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:11] [train] ep=62 step=040/40 ce=0.2646 sc=0.7124 mi=0.0556 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:14] [ep_summary] ep=62/100 val_live=0.9506/0.9504 val_ema=0.9691/0.9697 test77_live=0.7194/0.7032 test77_diag_ema=0.7158/0.6892 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:16:14] [train] epoch 63/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:16:14] [train] ep=63 step=001/40 ce=0.2564 sc=0.8401 mi=0.0581 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.00e-04 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:15] [train] ep=63 step=010/40 ce=0.2874 sc=0.7212 mi=0.0537 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=9.89e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:17] [train] ep=63 step=020/40 ce=0.2731 sc=0.7615 mi=0.0534 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=9.78e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:19] [train] ep=63 step=030/40 ce=0.2682 sc=0.7404 mi=0.0533 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=9.67e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:21] [train] ep=63 step=040/40 ce=0.2673 sc=0.7475 mi=0.0535 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=9.55e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:23] [ep_summary] ep=63/100 val_live=0.9815/0.9810 val_ema=0.9691/0.9697 test77_live=0.7122/0.6821 test77_diag_ema=0.7194/0.6928 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:16:24] [train] epoch 64/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:16:24] [train] ep=64 step=001/40 ce=0.2575 sc=0.8419 mi=0.0532 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=9.54e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:25] [train] ep=64 step=010/40 ce=0.2608 sc=0.7976 mi=0.0550 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=9.44e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:27] [train] ep=64 step=020/40 ce=0.2743 sc=0.8361 mi=0.0549 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=9.33e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:29] [train] ep=64 step=030/40 ce=0.2765 sc=0.8349 mi=0.0554 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=9.21e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:31] [train] ep=64 step=040/40 ce=0.2723 sc=0.8361 mi=0.0553 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=9.10e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:33] [ep_summary] ep=64/100 val_live=0.9630/0.9625 val_ema=0.9691/0.9697 test77_live=0.7230/0.7002 test77_diag_ema=0.7194/0.6928 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:16:33] [train] epoch 65/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:16:34] [train] ep=65 step=001/40 ce=0.6751 sc=0.5862 mi=0.0466 dn=0.0000 v13=0.0003 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9375 lr=9.09e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:35] [train] ep=65 step=010/40 ce=0.3259 sc=0.6169 mi=0.0567 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=8.99e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:37] [train] ep=65 step=020/40 ce=0.2924 sc=0.7243 mi=0.0550 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=8.88e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:39] [train] ep=65 step=030/40 ce=0.2814 sc=0.7650 mi=0.0563 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=8.77e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:41] [train] ep=65 step=040/40 ce=0.2758 sc=0.7686 mi=0.0561 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=8.66e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:43] [ep_summary] ep=65/100 val_live=0.9691/0.9688 val_ema=0.9630/0.9628 test77_live=0.7014/0.6739 test77_diag_ema=0.7158/0.6886 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:16:43] [train] epoch 66/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:16:43] [train] ep=66 step=001/40 ce=0.4248 sc=0.7541 mi=0.0662 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=8.65e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:45] [train] ep=66 step=010/40 ce=0.3259 sc=0.8443 mi=0.0544 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=8.55e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:47] [train] ep=66 step=020/40 ce=0.2944 sc=0.7242 mi=0.0555 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=8.44e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:49] [train] ep=66 step=030/40 ce=0.3014 sc=0.7283 mi=0.0542 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9958 lr=8.33e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:50] [train] ep=66 step=040/40 ce=0.2907 sc=0.7192 mi=0.0546 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=8.22e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:53] [ep_summary] ep=66/100 val_live=0.9691/0.9687 val_ema=0.9630/0.9628 test77_live=0.6835/0.6387 test77_diag_ema=0.7158/0.6889 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.8s
+[18:16:53] [train] epoch 67/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:16:53] [train] ep=67 step=001/40 ce=0.2579 sc=0.8409 mi=0.0568 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=8.21e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:55] [train] ep=67 step=010/40 ce=0.4091 sc=0.7400 mi=0.0560 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=8.11e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:57] [train] ep=67 step=020/40 ce=0.4105 sc=0.8028 mi=0.0547 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=8.01e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:16:59] [train] ep=67 step=030/40 ce=0.4168 sc=0.8117 mi=0.0544 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=7.90e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:00] [train] ep=67 step=040/40 ce=0.3886 sc=0.8198 mi=0.0545 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=7.79e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:03] [ep_summary] ep=67/100 val_live=0.9506/0.9504 val_ema=0.9630/0.9628 test77_live=0.7014/0.6739 test77_diag_ema=0.7194/0.6925 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:17:03] [train] epoch 68/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:17:03] [train] ep=68 step=001/40 ce=0.2579 sc=0.9263 mi=0.0528 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=7.78e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:05] [train] ep=68 step=010/40 ce=0.3016 sc=0.7164 mi=0.0531 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=7.69e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:07] [train] ep=68 step=020/40 ce=0.2895 sc=0.7571 mi=0.0536 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=7.58e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:08] [train] ep=68 step=030/40 ce=0.2800 sc=0.7991 mi=0.0539 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=7.48e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:10] [train] ep=68 step=040/40 ce=0.2750 sc=0.7587 mi=0.0543 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=7.37e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:13] [ep_summary] ep=68/100 val_live=0.9691/0.9687 val_ema=0.9630/0.9628 test77_live=0.7266/0.7093 test77_diag_ema=0.7230/0.6956 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.8s
+[18:17:13] [save] best_sourcequalified77_ema ep=68 source_val_live=0.9691/0.9687 source_val_ema=0.9630/0.9628 test77_ema=0.7230/0.6956
+[18:17:13] [train] epoch 69/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:17:13] [train] ep=69 step=001/40 ce=0.2566 sc=1.0064 mi=0.0511 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=7.36e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:15] [train] ep=69 step=010/40 ce=0.2915 sc=0.8339 mi=0.0531 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=7.27e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:16] [train] ep=69 step=020/40 ce=0.2781 sc=0.7801 mi=0.0541 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=7.16e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:18] [train] ep=69 step=030/40 ce=0.2751 sc=0.7494 mi=0.0539 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=7.06e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:20] [train] ep=69 step=040/40 ce=0.2909 sc=0.7590 mi=0.0546 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=6.96e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:23] [ep_summary] ep=69/100 val_live=0.9691/0.9687 val_ema=0.9630/0.9628 test77_live=0.7446/0.7311 test77_diag_ema=0.7266/0.6992 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:17:23] [save] best_sourcequalified77_ema ep=69 source_val_live=0.9691/0.9687 source_val_ema=0.9630/0.9628 test77_ema=0.7266/0.6992
+[18:17:23] [train] epoch 70/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:17:23] [train] ep=70 step=001/40 ce=0.2582 sc=0.8800 mi=0.0494 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=6.95e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:25] [train] ep=70 step=010/40 ce=0.2695 sc=0.7568 mi=0.0541 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=6.85e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:26] [train] ep=70 step=020/40 ce=0.2802 sc=0.7078 mi=0.0553 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=6.75e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:28] [train] ep=70 step=030/40 ce=0.2733 sc=0.6966 mi=0.0552 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=6.65e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:30] [train] ep=70 step=040/40 ce=0.2702 sc=0.7055 mi=0.0551 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=6.55e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:33] [pool] check ep=070/100 source_val_acc_ema=0.9630 threshold=0.90
+[18:17:34] [pool] ep=070 ADDED src_val=0.9630/0.9628 dev77=0.6929/0.6574 final77=0.7338/0.7055
+[18:17:34] [pool] running best ep=070 dev77_f1=0.6574 final77_f1=0.7055 (pool_size=4)
+[18:17:34] [ep_summary] ep=70/100 val_live=0.9753/0.9756 val_ema=0.9630/0.9628 test77_live=0.7302/0.7216 test77_diag_ema=0.7338/0.7055 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=11.2s
+[18:17:34] [save] best_sourcequalified77_ema ep=70 source_val_live=0.9753/0.9756 source_val_ema=0.9630/0.9628 test77_ema=0.7338/0.7055
+[18:17:34] [strict77_monitor] ep=70 best_source_epoch=61 source_val_ema=0.9691/0.9697 test77_ema_diag=0.7158/0.6891 sourcequalified_count=70 best_sourcequalified77_epoch=70 source_val_ema=0.9630/0.9628 test77_ema=0.7338/0.7055
+[18:17:34] [train] epoch 71/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:17:34] [train] ep=71 step=001/40 ce=1.1605 sc=1.3290 mi=0.0600 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9375 lr=6.54e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:36] [train] ep=71 step=010/40 ce=0.4442 sc=0.9565 mi=0.0522 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=6.45e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:38] [train] ep=71 step=020/40 ce=0.3524 sc=0.8780 mi=0.0526 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=6.35e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:39] [train] ep=71 step=030/40 ce=0.3291 sc=0.8585 mi=0.0533 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9958 lr=6.25e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:41] [train] ep=71 step=040/40 ce=0.3169 sc=0.8272 mi=0.0529 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=6.15e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:44] [ep_summary] ep=71/100 val_live=0.9753/0.9756 val_ema=0.9630/0.9628 test77_live=0.7122/0.6862 test77_diag_ema=0.7374/0.7116 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:17:44] [save] best_sourcequalified77_ema ep=71 source_val_live=0.9753/0.9756 source_val_ema=0.9630/0.9628 test77_ema=0.7374/0.7116
+[18:17:44] [train] epoch 72/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:17:44] [train] ep=72 step=001/40 ce=0.2578 sc=0.8295 mi=0.0548 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=6.14e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:46] [train] ep=72 step=010/40 ce=0.2584 sc=0.7129 mi=0.0545 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=6.06e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:47] [train] ep=72 step=020/40 ce=0.3493 sc=0.8411 mi=0.0536 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=5.96e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:49] [train] ep=72 step=030/40 ce=0.3387 sc=0.8818 mi=0.0528 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=5.86e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:51] [train] ep=72 step=040/40 ce=0.3185 sc=0.8520 mi=0.0537 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9953 lr=5.77e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:54] [ep_summary] ep=72/100 val_live=0.9753/0.9756 val_ema=0.9630/0.9628 test77_live=0.6942/0.6580 test77_diag_ema=0.7446/0.7188 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.8s
+[18:17:54] [save] best_sourcequalified77_ema ep=72 source_val_live=0.9753/0.9756 source_val_ema=0.9630/0.9628 test77_ema=0.7446/0.7188
+[18:17:54] [train] epoch 73/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:17:54] [train] ep=73 step=001/40 ce=0.2615 sc=0.9700 mi=0.0598 dn=0.0000 v13=0.0003 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=5.76e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:56] [train] ep=73 step=010/40 ce=0.2614 sc=0.7595 mi=0.0548 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=5.67e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:17:58] [train] ep=73 step=020/40 ce=0.2880 sc=0.7662 mi=0.0534 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=5.58e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:00] [train] ep=73 step=030/40 ce=0.2789 sc=0.7575 mi=0.0542 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=5.48e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:02] [train] ep=73 step=040/40 ce=0.2745 sc=0.7404 mi=0.0550 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=5.39e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:05] [ep_summary] ep=73/100 val_live=0.9753/0.9756 val_ema=0.9630/0.9628 test77_live=0.6942/0.6615 test77_diag_ema=0.7446/0.7161 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=11.0s
+[18:18:05] [train] epoch 74/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:18:05] [train] ep=74 step=001/40 ce=0.2588 sc=0.8807 mi=0.0436 dn=0.0000 v13=0.0008 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=5.38e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:07] [train] ep=74 step=010/40 ce=0.3512 sc=0.8395 mi=0.0516 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=5.30e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:09] [train] ep=74 step=020/40 ce=0.3453 sc=0.8665 mi=0.0520 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=5.20e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:11] [train] ep=74 step=030/40 ce=0.3209 sc=0.8272 mi=0.0527 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=5.11e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:13] [train] ep=74 step=040/40 ce=0.3065 sc=0.8137 mi=0.0526 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9953 lr=5.02e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:16] [ep_summary] ep=74/100 val_live=0.9877/0.9878 val_ema=0.9630/0.9628 test77_live=0.6619/0.6252 test77_diag_ema=0.7446/0.7161 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=11.0s
+[18:18:16] [train] epoch 75/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:18:16] [train] ep=75 step=001/40 ce=0.2578 sc=0.7270 mi=0.0533 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=5.01e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:18] [train] ep=75 step=010/40 ce=0.2638 sc=0.7027 mi=0.0556 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=4.93e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:20] [train] ep=75 step=020/40 ce=0.2609 sc=0.7659 mi=0.0555 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=4.84e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:22] [train] ep=75 step=030/40 ce=0.2601 sc=0.7729 mi=0.0555 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=4.75e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:24] [train] ep=75 step=040/40 ce=0.2623 sc=0.7827 mi=0.0549 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=4.66e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:27] [ep_summary] ep=75/100 val_live=0.9815/0.9810 val_ema=0.9630/0.9628 test77_live=0.6727/0.6441 test77_diag_ema=0.7410/0.7126 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.8s
+[18:18:27] [train] epoch 76/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:18:27] [train] ep=76 step=001/40 ce=0.2578 sc=0.4331 mi=0.0554 dn=0.0000 v13=0.0002 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=4.65e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:28] [train] ep=76 step=010/40 ce=0.2574 sc=0.6519 mi=0.0534 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=4.58e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:30] [train] ep=76 step=020/40 ce=0.2574 sc=0.7217 mi=0.0546 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=4.49e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:32] [train] ep=76 step=030/40 ce=0.2575 sc=0.7435 mi=0.0546 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=4.40e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:34] [train] ep=76 step=040/40 ce=0.2574 sc=0.7642 mi=0.0543 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=4.32e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:36] [ep_summary] ep=76/100 val_live=0.9815/0.9810 val_ema=0.9630/0.9628 test77_live=0.7050/0.6826 test77_diag_ema=0.7410/0.7151 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:18:36] [train] epoch 77/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:18:37] [train] ep=77 step=001/40 ce=0.2568 sc=0.4182 mi=0.0556 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=4.31e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:38] [train] ep=77 step=010/40 ce=0.3552 sc=0.8323 mi=0.0545 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=4.23e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:40] [train] ep=77 step=020/40 ce=0.3493 sc=0.8107 mi=0.0548 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=4.15e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:42] [train] ep=77 step=030/40 ce=0.3188 sc=0.7773 mi=0.0544 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9958 lr=4.06e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:44] [train] ep=77 step=040/40 ce=0.3033 sc=0.7707 mi=0.0540 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=3.98e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:46] [ep_summary] ep=77/100 val_live=0.9630/0.9625 val_ema=0.9630/0.9628 test77_live=0.6942/0.6731 test77_diag_ema=0.7410/0.7156 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:18:46] [train] epoch 78/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:18:46] [train] ep=78 step=001/40 ce=0.2568 sc=0.6964 mi=0.0570 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=3.97e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:48] [train] ep=78 step=010/40 ce=0.2802 sc=0.6524 mi=0.0538 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=3.90e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:50] [train] ep=78 step=020/40 ce=0.3681 sc=0.6698 mi=0.0532 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9906 lr=3.82e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:52] [train] ep=78 step=030/40 ce=0.3486 sc=0.7113 mi=0.0533 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9917 lr=3.74e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:53] [train] ep=78 step=040/40 ce=0.3503 sc=0.7516 mi=0.0534 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9922 lr=3.66e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:56] [ep_summary] ep=78/100 val_live=0.9753/0.9749 val_ema=0.9691/0.9687 test77_live=0.6727/0.6369 test77_diag_ema=0.7410/0.7156 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:18:56] [train] epoch 79/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:18:56] [train] ep=79 step=001/40 ce=0.2592 sc=0.7590 mi=0.0571 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=3.65e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:18:58] [train] ep=79 step=010/40 ce=0.3023 sc=0.7956 mi=0.0558 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=3.58e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:00] [train] ep=79 step=020/40 ce=0.2881 sc=0.7721 mi=0.0539 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=3.50e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:03] [train] ep=79 step=030/40 ce=0.2866 sc=0.7438 mi=0.0530 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=3.42e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:05] [train] ep=79 step=040/40 ce=0.2792 sc=0.7229 mi=0.0532 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=3.35e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:07] [ep_summary] ep=79/100 val_live=0.9691/0.9687 val_ema=0.9691/0.9687 test77_live=0.6727/0.6388 test77_diag_ema=0.7374/0.7122 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=11.1s
+[18:19:07] [train] epoch 80/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:19:07] [train] ep=80 step=001/40 ce=0.2568 sc=0.6143 mi=0.0643 dn=0.0000 v13=0.0001 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=3.34e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:09] [train] ep=80 step=010/40 ce=0.2591 sc=0.8568 mi=0.0517 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=3.27e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:11] [train] ep=80 step=020/40 ce=0.2586 sc=0.7166 mi=0.0530 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=3.19e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:14] [train] ep=80 step=030/40 ce=0.2643 sc=0.6990 mi=0.0528 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=3.12e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:16] [train] ep=80 step=040/40 ce=0.2825 sc=0.7177 mi=0.0528 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=3.05e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:18] [pool] check ep=080/100 source_val_acc_ema=0.9691 threshold=0.90
+[18:19:20] [pool] ep=080 ADDED src_val=0.9691/0.9687 dev77=0.7000/0.6667 final77=0.7338/0.7089
+[18:19:20] [pool] running best ep=080 dev77_f1=0.6667 final77_f1=0.7089 (pool_size=5)
+[18:19:20] [ep_summary] ep=80/100 val_live=0.9630/0.9625 val_ema=0.9691/0.9687 test77_live=0.6727/0.6333 test77_diag_ema=0.7338/0.7089 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=12.5s
+[18:19:20] [strict77_monitor] ep=80 best_source_epoch=61 source_val_ema=0.9691/0.9697 test77_ema_diag=0.7158/0.6891 sourcequalified_count=80 best_sourcequalified77_epoch=72 source_val_ema=0.9630/0.9628 test77_ema=0.7446/0.7188
+[18:19:20] [train] epoch 81/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:19:20] [train] ep=81 step=001/40 ce=0.2576 sc=0.6173 mi=0.0577 dn=0.0000 v13=0.0002 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=3.04e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:22] [train] ep=81 step=010/40 ce=0.2577 sc=0.7916 mi=0.0536 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.97e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:24] [train] ep=81 step=020/40 ce=0.2749 sc=0.7825 mi=0.0530 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.90e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:25] [train] ep=81 step=030/40 ce=0.2693 sc=0.7866 mi=0.0527 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.83e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:27] [train] ep=81 step=040/40 ce=0.2661 sc=0.7575 mi=0.0531 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.76e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:30] [ep_summary] ep=81/100 val_live=0.9630/0.9625 val_ema=0.9691/0.9687 test77_live=0.6871/0.6522 test77_diag_ema=0.7338/0.7090 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.2s
+[18:19:30] [train] epoch 82/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:19:30] [train] ep=82 step=001/40 ce=0.2570 sc=0.9597 mi=0.0594 dn=0.0000 v13=0.0003 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.75e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:32] [train] ep=82 step=010/40 ce=0.2602 sc=0.8015 mi=0.0542 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.69e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:34] [train] ep=82 step=020/40 ce=0.3082 sc=0.8038 mi=0.0531 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=2.62e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:35] [train] ep=82 step=030/40 ce=0.2929 sc=0.8036 mi=0.0528 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=2.55e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:37] [train] ep=82 step=040/40 ce=0.2841 sc=0.8126 mi=0.0529 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=2.48e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:40] [ep_summary] ep=82/100 val_live=0.9691/0.9687 val_ema=0.9691/0.9687 test77_live=0.6835/0.6520 test77_diag_ema=0.7302/0.7056 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:19:40] [train] epoch 83/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:19:40] [train] ep=83 step=001/40 ce=0.2561 sc=1.0056 mi=0.0501 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.48e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:42] [train] ep=83 step=010/40 ce=0.3526 sc=0.8847 mi=0.0537 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.42e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:43] [train] ep=83 step=020/40 ce=0.3050 sc=0.8140 mi=0.0517 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=2.35e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:45] [train] ep=83 step=030/40 ce=0.3240 sc=0.7834 mi=0.0529 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=2.29e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:47] [train] ep=83 step=040/40 ce=0.3072 sc=0.7851 mi=0.0531 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9953 lr=2.22e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:50] [ep_summary] ep=83/100 val_live=0.9753/0.9749 val_ema=0.9691/0.9687 test77_live=0.7050/0.6729 test77_diag_ema=0.7230/0.6928 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:19:50] [train] epoch 84/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:19:50] [train] ep=84 step=001/40 ce=0.4284 sc=1.2552 mi=0.0552 dn=0.0000 v13=0.0003 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.22e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:51] [train] ep=84 step=010/40 ce=0.2743 sc=0.8163 mi=0.0532 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.16e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:53] [train] ep=84 step=020/40 ce=0.2743 sc=0.7429 mi=0.0531 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.10e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:55] [train] ep=84 step=030/40 ce=0.2698 sc=0.7388 mi=0.0531 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.04e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:19:57] [train] ep=84 step=040/40 ce=0.2827 sc=0.7765 mi=0.0532 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=1.98e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:00] [ep_summary] ep=84/100 val_live=0.9753/0.9749 val_ema=0.9691/0.9687 test77_live=0.7050/0.6683 test77_diag_ema=0.7302/0.7027 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.5s
+[18:20:00] [train] epoch 85/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:20:00] [train] ep=85 step=001/40 ce=0.2589 sc=0.6131 mi=0.0532 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.97e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:02] [train] ep=85 step=010/40 ce=0.4190 sc=0.8630 mi=0.0517 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9875 lr=1.92e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:04] [train] ep=85 step=020/40 ce=0.3381 sc=0.7252 mi=0.0520 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.86e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:06] [train] ep=85 step=030/40 ce=0.3145 sc=0.7234 mi=0.0521 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9958 lr=1.80e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:08] [train] ep=85 step=040/40 ce=0.3002 sc=0.7231 mi=0.0517 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.74e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:11] [ep_summary] ep=85/100 val_live=0.9815/0.9810 val_ema=0.9691/0.9687 test77_live=0.7086/0.6634 test77_diag_ema=0.7194/0.6862 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.8s
+[18:20:11] [train] epoch 86/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:20:11] [train] ep=86 step=001/40 ce=0.2581 sc=0.8260 mi=0.0501 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.74e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:13] [train] ep=86 step=010/40 ce=0.2709 sc=0.7128 mi=0.0511 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.68e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:15] [train] ep=86 step=020/40 ce=0.2657 sc=0.7216 mi=0.0514 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.63e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:17] [train] ep=86 step=030/40 ce=0.2629 sc=0.7441 mi=0.0516 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.57e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:19] [train] ep=86 step=040/40 ce=0.2800 sc=0.7370 mi=0.0519 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=1.52e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:22] [ep_summary] ep=86/100 val_live=0.9815/0.9810 val_ema=0.9691/0.9687 test77_live=0.7086/0.6634 test77_diag_ema=0.7158/0.6827 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.9s
+[18:20:22] [train] epoch 87/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:20:22] [train] ep=87 step=001/40 ce=0.4381 sc=0.9261 mi=0.0533 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.52e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:24] [train] ep=87 step=010/40 ce=0.2758 sc=0.7892 mi=0.0514 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.47e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:26] [train] ep=87 step=020/40 ce=0.3015 sc=0.7940 mi=0.0517 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.42e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:28] [train] ep=87 step=030/40 ce=0.2880 sc=0.8125 mi=0.0515 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=1.37e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:30] [train] ep=87 step=040/40 ce=0.2865 sc=0.7807 mi=0.0506 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=1.31e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:33] [ep_summary] ep=87/100 val_live=0.9815/0.9810 val_ema=0.9691/0.9687 test77_live=0.7086/0.6629 test77_diag_ema=0.7230/0.6898 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=11.3s
+[18:20:33] [train] epoch 88/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:20:33] [train] ep=88 step=001/40 ce=0.2575 sc=0.8430 mi=0.0587 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.31e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:35] [train] ep=88 step=010/40 ce=0.2586 sc=0.7141 mi=0.0525 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.27e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:37] [train] ep=88 step=020/40 ce=0.2642 sc=0.7584 mi=0.0520 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.22e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:39] [train] ep=88 step=030/40 ce=0.2664 sc=0.7302 mi=0.0519 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.17e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:41] [train] ep=88 step=040/40 ce=0.2663 sc=0.7420 mi=0.0520 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.12e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:44] [ep_summary] ep=88/100 val_live=0.9815/0.9810 val_ema=0.9691/0.9687 test77_live=0.7158/0.6739 test77_diag_ema=0.7230/0.6898 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.8s
+[18:20:44] [train] epoch 89/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:20:44] [train] ep=89 step=001/40 ce=0.2569 sc=0.4244 mi=0.0537 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.12e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:46] [train] ep=89 step=010/40 ce=0.3405 sc=0.8933 mi=0.0534 dn=0.0000 v13=0.0006 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.08e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:48] [train] ep=89 step=020/40 ce=0.2999 sc=0.8268 mi=0.0525 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.03e-05 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:50] [train] ep=89 step=030/40 ce=0.2858 sc=0.7848 mi=0.0522 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=9.89e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:52] [train] ep=89 step=040/40 ce=0.2832 sc=0.7875 mi=0.0524 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=9.46e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:55] [ep_summary] ep=89/100 val_live=0.9753/0.9749 val_ema=0.9753/0.9749 test77_live=0.7194/0.6778 test77_diag_ema=0.7230/0.6898 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.9s
+[18:20:55] [save] best_sourceval_ema val_acc_ema=0.9753 source_val_live=0.9753/0.9749 source_val_ema=0.9753/0.9749 ep=89
+[18:20:55] [train] epoch 90/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:20:55] [train] ep=90 step=001/40 ce=0.2566 sc=0.9046 mi=0.0564 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=9.42e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:57] [train] ep=90 step=010/40 ce=0.2577 sc=0.7799 mi=0.0518 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=9.04e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:20:59] [train] ep=90 step=020/40 ce=0.3285 sc=0.8873 mi=0.0525 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=8.63e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:01] [train] ep=90 step=030/40 ce=0.3050 sc=0.8326 mi=0.0527 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9958 lr=8.23e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:02] [train] ep=90 step=040/40 ce=0.2939 sc=0.8201 mi=0.0526 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=7.84e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:05] [pool] check ep=090/100 source_val_acc_ema=0.9691 threshold=0.90
+[18:21:06] [pool] ep=090 ADDED src_val=0.9691/0.9687 dev77=0.7143/0.6790 final77=0.7194/0.6830
+[18:21:06] [pool] running best ep=090 dev77_f1=0.6790 final77_f1=0.6830 (pool_size=6)
+[18:21:06] [ep_summary] ep=90/100 val_live=0.9753/0.9749 val_ema=0.9691/0.9687 test77_live=0.7230/0.6810 test77_diag_ema=0.7194/0.6830 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=11.5s
+[18:21:06] [strict77_monitor] ep=90 best_source_epoch=89 source_val_ema=0.9753/0.9749 test77_ema_diag=0.7230/0.6898 sourcequalified_count=90 best_sourcequalified77_epoch=72 source_val_ema=0.9630/0.9628 test77_ema=0.7446/0.7188
+[18:21:06] [train] epoch 91/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:21:07] [train] ep=91 step=001/40 ce=0.2595 sc=0.8740 mi=0.0504 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=7.80e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:08] [train] ep=91 step=010/40 ce=0.2609 sc=0.6978 mi=0.0522 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=7.45e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:10] [train] ep=91 step=020/40 ce=0.2590 sc=0.7601 mi=0.0527 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=7.08e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:12] [train] ep=91 step=030/40 ce=0.2623 sc=0.8048 mi=0.0524 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=6.72e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:14] [train] ep=91 step=040/40 ce=0.2610 sc=0.7886 mi=0.0522 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=6.36e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:17] [ep_summary] ep=91/100 val_live=0.9753/0.9749 val_ema=0.9691/0.9687 test77_live=0.7230/0.6810 test77_diag_ema=0.7194/0.6827 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.1s
+[18:21:17] [train] epoch 92/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:21:17] [train] ep=92 step=001/40 ce=0.2562 sc=0.6138 mi=0.0531 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=6.33e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:18] [train] ep=92 step=010/40 ce=0.2570 sc=0.7526 mi=0.0510 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=6.02e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:20] [train] ep=92 step=020/40 ce=0.3150 sc=0.8021 mi=0.0510 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=5.68e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:23] [train] ep=92 step=030/40 ce=0.2957 sc=0.8345 mi=0.0517 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9958 lr=5.35e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:25] [train] ep=92 step=040/40 ce=0.2864 sc=0.7947 mi=0.0522 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=5.04e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:27] [ep_summary] ep=92/100 val_live=0.9753/0.9749 val_ema=0.9691/0.9687 test77_live=0.7266/0.6881 test77_diag_ema=0.7158/0.6794 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.9s
+[18:21:27] [train] epoch 93/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:21:28] [train] ep=93 step=001/40 ce=0.2555 sc=1.1234 mi=0.0529 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=5.01e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:29] [train] ep=93 step=010/40 ce=0.3546 sc=0.8812 mi=0.0544 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=4.73e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:31] [train] ep=93 step=020/40 ce=0.3432 sc=0.7748 mi=0.0552 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=4.43e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:33] [train] ep=93 step=030/40 ce=0.3143 sc=0.7899 mi=0.0542 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9958 lr=4.14e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:35] [train] ep=93 step=040/40 ce=0.3007 sc=0.7862 mi=0.0538 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=3.87e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:37] [ep_summary] ep=93/100 val_live=0.9753/0.9749 val_ema=0.9691/0.9687 test77_live=0.7230/0.6847 test77_diag_ema=0.7158/0.6790 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.0s
+[18:21:37] [train] epoch 94/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:21:38] [train] ep=94 step=001/40 ce=0.8901 sc=1.5080 mi=0.0517 dn=0.0000 v13=0.0002 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9375 lr=3.84e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:40] [train] ep=94 step=010/40 ce=0.3200 sc=0.7878 mi=0.0525 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=3.60e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:42] [train] ep=94 step=020/40 ce=0.2889 sc=0.7246 mi=0.0526 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=3.34e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:43] [train] ep=94 step=030/40 ce=0.2781 sc=0.7632 mi=0.0520 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=3.09e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:45] [train] ep=94 step=040/40 ce=0.2728 sc=0.7502 mi=0.0519 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=2.85e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:48] [ep_summary] ep=94/100 val_live=0.9753/0.9749 val_ema=0.9691/0.9687 test77_live=0.7194/0.6812 test77_diag_ema=0.7158/0.6790 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.6s
+[18:21:48] [train] epoch 95/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:21:48] [train] ep=95 step=001/40 ce=0.2569 sc=0.6167 mi=0.0489 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.82e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:50] [train] ep=95 step=010/40 ce=0.2565 sc=0.6460 mi=0.0507 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.62e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:52] [train] ep=95 step=020/40 ce=0.2576 sc=0.7036 mi=0.0512 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.40e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:54] [train] ep=95 step=030/40 ce=0.2578 sc=0.7005 mi=0.0522 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.18e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:55] [train] ep=95 step=040/40 ce=0.2832 sc=0.7336 mi=0.0523 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=1.98e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:21:58] [ep_summary] ep=95/100 val_live=0.9753/0.9749 val_ema=0.9691/0.9687 test77_live=0.7158/0.6778 test77_diag_ema=0.7194/0.6826 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=10.0s
+[18:21:58] [train] epoch 96/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:21:58] [train] ep=96 step=001/40 ce=0.2566 sc=0.7580 mi=0.0538 dn=0.0000 v13=0.0003 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.96e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:00] [train] ep=96 step=010/40 ce=0.3173 sc=0.8610 mi=0.0528 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=1.79e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:02] [train] ep=96 step=020/40 ce=0.2878 sc=0.8686 mi=0.0520 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.61e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:03] [train] ep=96 step=030/40 ce=0.2777 sc=0.8842 mi=0.0521 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=1.44e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:05] [train] ep=96 step=040/40 ce=0.2835 sc=0.8586 mi=0.0524 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=1.27e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:08] [ep_summary] ep=96/100 val_live=0.9753/0.9749 val_ema=0.9691/0.9687 test77_live=0.7230/0.6845 test77_diag_ema=0.7194/0.6827 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:22:08] [train] epoch 97/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:22:08] [train] ep=97 step=001/40 ce=0.2569 sc=0.8568 mi=0.0522 dn=0.0000 v13=0.0003 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.26e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:10] [train] ep=97 step=010/40 ce=0.2567 sc=0.7484 mi=0.0526 dn=0.0000 v13=0.0003 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.12e-06 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:11] [train] ep=97 step=020/40 ce=0.3403 sc=0.8358 mi=0.0531 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=9.76e-07 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:13] [train] ep=97 step=030/40 ce=0.3125 sc=0.7714 mi=0.0531 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9958 lr=8.43e-07 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:15] [train] ep=97 step=040/40 ce=0.3000 sc=0.7672 mi=0.0532 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=7.19e-07 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:18] [ep_summary] ep=97/100 val_live=0.9753/0.9749 val_ema=0.9691/0.9687 test77_live=0.7194/0.6812 test77_diag_ema=0.7158/0.6798 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:22:18] [train] epoch 98/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:22:18] [train] ep=98 step=001/40 ce=0.2591 sc=0.8187 mi=0.0555 dn=0.0000 v13=0.0001 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=7.07e-07 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:20] [train] ep=98 step=010/40 ce=0.2574 sc=0.8396 mi=0.0533 dn=0.0000 v13=0.0003 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=6.05e-07 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:21] [train] ep=98 step=020/40 ce=0.2570 sc=0.9408 mi=0.0528 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=5.01e-07 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:23] [train] ep=98 step=030/40 ce=0.2866 sc=0.9281 mi=0.0535 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=4.07e-07 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:25] [train] ep=98 step=040/40 ce=0.2837 sc=0.8899 mi=0.0528 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=3.22e-07 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:28] [ep_summary] ep=98/100 val_live=0.9753/0.9749 val_ema=0.9753/0.9749 test77_live=0.7230/0.6848 test77_diag_ema=0.7158/0.6800 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:22:28] [train] epoch 99/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:22:28] [train] ep=99 step=001/40 ce=0.2568 sc=0.6298 mi=0.0461 dn=0.0000 v13=0.0003 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=3.15e-07 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:29] [train] ep=99 step=010/40 ce=0.2751 sc=0.7327 mi=0.0535 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=2.48e-07 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:31] [train] ep=99 step=020/40 ce=0.2660 sc=0.7301 mi=0.0529 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=1.83e-07 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:33] [train] ep=99 step=030/40 ce=0.2872 sc=0.7610 mi=0.0521 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9979 lr=1.28e-07 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:35] [train] ep=99 step=040/40 ce=0.2797 sc=0.7387 mi=0.0526 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9984 lr=8.26e-08 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:38] [ep_summary] ep=99/100 val_live=0.9753/0.9749 val_ema=0.9753/0.9749 test77_live=0.7194/0.6814 test77_diag_ema=0.7122/0.6763 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=9.9s
+[18:22:38] [train] epoch 100/100 steps=40 use_dann=0 das=stage3 f=[12.0,95.0] p=1.00 gpu=3.0/15.8GB
+[18:22:38] [train] ep=100 step=001/40 ce=0.2757 sc=0.6134 mi=0.0506 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=1.0000 lr=7.87e-08 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:39] [train] ep=100 step=010/40 ce=0.3161 sc=0.6815 mi=0.0525 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9938 lr=4.72e-08 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:41] [train] ep=100 step=020/40 ce=0.2885 sc=0.6424 mi=0.0526 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9969 lr=2.17e-08 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:43] [train] ep=100 step=030/40 ce=0.3075 sc=0.7087 mi=0.0526 dn=0.0000 v13=0.0005 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9958 lr=5.95e-09 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:45] [train] ep=100 step=040/40 ce=0.3120 sc=0.7411 mi=0.0525 dn=0.0000 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 acc=0.9953 lr=4.92e-11 lambda=0.000 v18_lambda=0.000 gpu=3.0/15.8GB
+[18:22:47] [pool] check ep=100/100 source_val_acc_ema=0.9691 threshold=0.90
+[18:22:49] [pool] ep=100 ADDED src_val=0.9691/0.9687 dev77=0.7143/0.6745 final77=0.7158/0.6796
+[18:22:49] [pool] running best ep=090 dev77_f1=0.6790 final77_f1=0.6830 (pool_size=7)
+[18:22:49] [ep_summary] ep=100/100 val_live=0.9753/0.9749 val_ema=0.9691/0.9687 test77_live=0.7194/0.6812 test77_diag_ema=0.7158/0.6796 v13=0.0004 v15=0.0000 v16=0.0000 v17=0.0000 v18=0.0000 das=stage3[12,95] p=1.00 ep_time=11.2s
+[18:22:49] [strict77_monitor] ep=100 best_source_epoch=89 source_val_ema=0.9753/0.9749 test77_ema_diag=0.7230/0.6898 sourcequalified_count=100 best_sourcequalified77_epoch=72 source_val_ema=0.9630/0.9628 test77_ema=0.7446/0.7188
+[18:22:49] [pool] FINAL pool_size=7 best ep=090 dev77_f1=0.6790 final77_f1=0.6830 -> G:\zhanghe\Letter journal\EXPERIMENTSRESULT\REVISION_5090\A_V13\seed68398\checkpoints\best_pool_ema.pt
+[18:22:49] [train] done best_sourceval_acc_ema=0.9753
+[18:22:54] [eval] loaded vit_large_patch16_dinov3_lvd1689m_best_sourceval_ema.pt (sourceval)
+[18:22:54] [eval] strict source-val selected by ema acc; heldout77_unused=140 final_test77=278 imgs, seed=42 dev_per_class=20
+[18:22:56] [eval] 77GHz final-test acc=0.7230 f1=0.6898
+[18:22:56] [eval] 77GHz final-test per-class={'Away': 0.725, 'Bend': 0.8974358974358975, 'Kneel': 0.7142857142857143, 'Pick': 0.725, 'SStep': 0.95, 'Sit': 0.10810810810810811, 'Towards': 0.9}
+[18:22:57] [eval] val_all acc=0.9691 f1=0.9687
+[18:22:57] [freq_scan:val10] f_virt=15GHz acc=0.9744 f1=0.9760
+[18:22:58] [freq_scan:val10] f_virt=30GHz acc=0.9744 f1=0.9760
+[18:22:59] [freq_scan:val10] f_virt=50GHz acc=0.9872 f1=0.9881
+[18:22:59] [freq_scan:val10] f_virt=77GHz acc=0.9872 f1=0.9881
+[18:23:00] [freq_scan:val10] f_virt=99GHz acc=0.9744 f1=0.9760
+[18:23:01] [freq_scan:val10] f_virt=120GHz acc=0.9615 f1=0.9637
+[18:23:01] [freq_scan:val10] f_virt=140GHz acc=0.9487 f1=0.9510
+[18:23:02] [freq_scan:val24] f_virt=15GHz acc=0.9881 f1=0.9881
+[18:23:03] [freq_scan:val24] f_virt=30GHz acc=0.9881 f1=0.9875
+[18:23:03] [freq_scan:val24] f_virt=50GHz acc=0.9881 f1=0.9875
+[18:23:04] [freq_scan:val24] f_virt=77GHz acc=0.9762 f1=0.9751
+[18:23:05] [freq_scan:val24] f_virt=99GHz acc=0.9762 f1=0.9751
+[18:23:05] [freq_scan:val24] f_virt=120GHz acc=0.9762 f1=0.9751
+[18:23:06] [freq_scan:val24] f_virt=140GHz acc=0.9643 f1=0.9637
+[18:23:06] [eval] saved eval_sourceval.json
+[18:23:11] [eval] loaded vit_large_patch16_dinov3_lvd1689m_best_sourcequalified77_ema.pt (sourcequalified)
+[18:23:11] [eval] source-qualified diagnostic selected (source-val ema acc >= 0.00, then best 77GHz ema macro-F1); heldout77_unused=140 final_test77=278 imgs, seed=42 dev_per_class=20
+[18:23:13] [eval] 77GHz final-test acc=0.7482 f1=0.7225
+[18:23:13] [eval] 77GHz final-test per-class={'Away': 0.825, 'Bend': 0.8974358974358975, 'Kneel': 0.7142857142857143, 'Pick': 0.725, 'SStep': 1.0, 'Sit': 0.1891891891891892, 'Towards': 0.85}
+[18:23:14] [eval] val_all acc=0.9630 f1=0.9628
+[18:23:14] [freq_scan:val10] f_virt=15GHz acc=0.9872 f1=0.9881
+[18:23:15] [freq_scan:val10] f_virt=30GHz acc=1.0000 f1=1.0000
+[18:23:16] [freq_scan:val10] f_virt=50GHz acc=0.9744 f1=0.9722
+[18:23:16] [freq_scan:val10] f_virt=77GHz acc=0.9615 f1=0.9601
+[18:23:17] [freq_scan:val10] f_virt=99GHz acc=0.9487 f1=0.9510
+[18:23:18] [freq_scan:val10] f_virt=120GHz acc=0.9615 f1=0.9637
+[18:23:18] [freq_scan:val10] f_virt=140GHz acc=0.9103 f1=0.9109
+[18:23:19] [freq_scan:val24] f_virt=15GHz acc=0.9762 f1=0.9757
+[18:23:20] [freq_scan:val24] f_virt=30GHz acc=0.9881 f1=0.9875
+[18:23:21] [freq_scan:val24] f_virt=50GHz acc=0.9762 f1=0.9760
+[18:23:21] [freq_scan:val24] f_virt=77GHz acc=0.9643 f1=0.9637
+[18:23:22] [freq_scan:val24] f_virt=99GHz acc=0.9643 f1=0.9637
+[18:23:23] [freq_scan:val24] f_virt=120GHz acc=0.9643 f1=0.9646
+[18:23:23] [freq_scan:val24] f_virt=140GHz acc=0.9405 f1=0.9403
+[18:23:23] [eval] saved eval_sourcequalified.json

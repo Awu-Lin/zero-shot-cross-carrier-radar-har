@@ -1,0 +1,18 @@
+{
+  "n_clips": 418,
+  "n_boot": 10000,
+  "rng_seed": 0,
+  "note": "PRELIMINARY -- eval-only, existing checkpoints",
+  "deltas": [
+    {
+      "delta": "DAS+ACR ensemble - DAS+ACR single",
+      "observed_pp": 2.4,
+      "ci95_pp": [
+        0.86,
+        3.98
+      ],
+      "frac_gt0": 0.9989,
+      "boot_mean_pp": 2.41
+    }
+  ]
+}

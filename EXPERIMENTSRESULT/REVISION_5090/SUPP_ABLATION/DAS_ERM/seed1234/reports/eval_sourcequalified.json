@@ -1,0 +1,229 @@
+{
+  "checkpoint": "vit_large_patch16_dinov3_lvd1689m_best_sourcequalified77_ema.pt",
+  "ckpt_selector": "sourcequalified",
+  "task": "known_people_unknown_frequency_strict_sourceval_selection",
+  "adapter_mode": "lora",
+  "experiment_name": "DAS_ERM",
+  "selection_proxy": {
+    "name": "source-qualified diagnostic selected (source-val ema acc >= 0.00, then best 77GHz ema macro-F1)",
+    "seed": 42,
+    "dev_per_class": 20,
+    "target_labels_used_for_candidate_ranking": true
+  },
+  "dev77": {
+    "not_evaluated": true,
+    "count": 140
+  },
+  "test77_final": {
+    "acc": 0.2949640287769784,
+    "macro_f1": 0.18029752819613934,
+    "per_class": {
+      "Away": 0.15,
+      "Bend": 1.0,
+      "Kneel": 0.0,
+      "Pick": 0.0,
+      "SStep": 0.0,
+      "Sit": 0.0,
+      "Towards": 0.925
+    }
+  },
+  "val_all": {
+    "acc": 0.9444444444444444,
+    "macro_f1": 0.9455340577789558,
+    "per_class": {
+      "Away": 1.0,
+      "Bend": 0.8333333333333334,
+      "Kneel": 0.9583333333333334,
+      "Pick": 0.8260869565217391,
+      "SStep": 1.0,
+      "Sit": 1.0,
+      "Towards": 1.0
+    }
+  },
+  "freq_scan_from_val_10GHz": {
+    "15.0": {
+      "acc": 0.8717948717948718,
+      "macro_f1": 0.8787369405381827,
+      "per_class": {
+        "Away": 1.0,
+        "Bend": 0.75,
+        "Kneel": 0.8333333333333334,
+        "Pick": 0.75,
+        "SStep": 0.875,
+        "Sit": 0.9166666666666666,
+        "Towards": 1.0
+      }
+    },
+    "30.0": {
+      "acc": 0.3974358974358974,
+      "macro_f1": 0.3200399777135735,
+      "per_class": {
+        "Away": 0.5833333333333334,
+        "Bend": 1.0,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.375,
+        "Sit": 0.0,
+        "Towards": 0.9
+      }
+    },
+    "50.0": {
+      "acc": 0.28205128205128205,
+      "macro_f1": 0.1503555268261151,
+      "per_class": {
+        "Away": 0.08333333333333333,
+        "Bend": 1.0,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 0.9
+      }
+    },
+    "77.0": {
+      "acc": 0.2948717948717949,
+      "macro_f1": 0.15238095238095242,
+      "per_class": {
+        "Away": 0.08333333333333333,
+        "Bend": 1.0,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 1.0
+      }
+    },
+    "99.0": {
+      "acc": 0.3076923076923077,
+      "macro_f1": 0.16899841697685364,
+      "per_class": {
+        "Away": 0.16666666666666666,
+        "Bend": 1.0,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 1.0
+      }
+    },
+    "120.0": {
+      "acc": 0.2948717948717949,
+      "macro_f1": 0.16370803640605175,
+      "per_class": {
+        "Away": 0.16666666666666666,
+        "Bend": 0.9166666666666666,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 1.0
+      }
+    },
+    "140.0": {
+      "acc": 0.28205128205128205,
+      "macro_f1": 0.129859532552311,
+      "per_class": {
+        "Away": 0.0,
+        "Bend": 1.0,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 1.0
+      }
+    }
+  },
+  "freq_scan_from_val_24GHz": {
+    "15.0": {
+      "acc": 0.6071428571428571,
+      "macro_f1": 0.5748030437471431,
+      "per_class": {
+        "Away": 0.9166666666666666,
+        "Bend": 0.5833333333333334,
+        "Kneel": 0.5,
+        "Pick": 0.0,
+        "SStep": 0.4166666666666667,
+        "Sit": 1.0,
+        "Towards": 0.75
+      }
+    },
+    "30.0": {
+      "acc": 0.9285714285714286,
+      "macro_f1": 0.9287501147385491,
+      "per_class": {
+        "Away": 1.0,
+        "Bend": 0.75,
+        "Kneel": 1.0,
+        "Pick": 0.8181818181818182,
+        "SStep": 0.9166666666666666,
+        "Sit": 1.0,
+        "Towards": 1.0
+      }
+    },
+    "50.0": {
+      "acc": 0.4880952380952381,
+      "macro_f1": 0.4672268907563025,
+      "per_class": {
+        "Away": 1.0,
+        "Bend": 0.5,
+        "Kneel": 0.25,
+        "Pick": 0.36363636363636365,
+        "SStep": 0.16666666666666666,
+        "Sit": 0.15384615384615385,
+        "Towards": 1.0
+      }
+    },
+    "77.0": {
+      "acc": 0.40476190476190477,
+      "macro_f1": 0.28762348762348766,
+      "per_class": {
+        "Away": 0.8333333333333334,
+        "Bend": 0.9166666666666666,
+        "Kneel": 0.08333333333333333,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 1.0
+      }
+    },
+    "99.0": {
+      "acc": 0.36904761904761907,
+      "macro_f1": 0.24653323392785456,
+      "per_class": {
+        "Away": 0.6666666666666666,
+        "Bend": 0.9166666666666666,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 1.0
+      }
+    },
+    "120.0": {
+      "acc": 0.36904761904761907,
+      "macro_f1": 0.24571428571428572,
+      "per_class": {
+        "Away": 0.6666666666666666,
+        "Bend": 0.9166666666666666,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 1.0
+      }
+    },
+    "140.0": {
+      "acc": 0.30952380952380953,
+      "macro_f1": 0.18237611445158614,
+      "per_class": {
+        "Away": 0.25,
+        "Bend": 0.9166666666666666,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 1.0
+      }
+    }
+  }
+}

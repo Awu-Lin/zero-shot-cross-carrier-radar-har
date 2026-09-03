@@ -1,0 +1,134 @@
+######## SUPP_ABLATION FORMAL START 2026-06-09 03:10:17 ########
+######## 03:10:17 >>> run_ACR_Lfreq_only.sh ########
+==== CONFIG=ACR_Lfreq_only  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_Lfreq_only ====
+     V921_USE_DAS=1 DAS_MODE=curriculum USE_HFT=1 USE_SPEC_AUGMENT=1
+     V13_FREQ_WEIGHT=0.05 V13_GRL_WEIGHT=0 V13_GRL_DISCRETE=0 V13_GRL_BINS=3
+---- 03:10:17 START ACR_Lfreq_only seed=42 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_Lfreq_only/seed42 ----
+---- 03:54:45 DONE  ACR_Lfreq_only seed=42 (exit 0) ----
+---- 03:54:45 START ACR_Lfreq_only seed=1234 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_Lfreq_only/seed1234 ----
+######## SUPP_ABLATION FORMAL START 2026-06-09 11:18:52 ########
+######## 11:18:52 >>> run_ACR_Lfreq_only.sh ########
+==== CONFIG=ACR_Lfreq_only  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_Lfreq_only ====
+     V921_USE_DAS=1 DAS_MODE=curriculum USE_HFT=1 USE_SPEC_AUGMENT=1
+     V13_FREQ_WEIGHT=0.05 V13_GRL_WEIGHT=0 V13_GRL_DISCRETE=0 V13_GRL_BINS=3
+---- 11:18:52 SKIP  ACR_Lfreq_only seed=42 (already complete: epoch_ckpts/ep100.pt) ----
+---- 11:18:52 START ACR_Lfreq_only seed=1234 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_Lfreq_only/seed1234 ----
+---- 11:38:32 DONE  ACR_Lfreq_only seed=1234 (exit 0) ----
+---- 11:38:32 START ACR_Lfreq_only seed=31415 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_Lfreq_only/seed31415 ----
+---- 12:05:12 DONE  ACR_Lfreq_only seed=31415 (exit 0) ----
+######## 12:05:12 >>> run_ACR_GRL_only.sh ########
+==== CONFIG=ACR_GRL_only  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_GRL_only ====
+     V921_USE_DAS=1 DAS_MODE=curriculum USE_HFT=1 USE_SPEC_AUGMENT=1
+     V13_FREQ_WEIGHT=0 V13_GRL_WEIGHT=0.3 V13_GRL_DISCRETE=0 V13_GRL_BINS=3
+---- 12:05:12 START ACR_GRL_only seed=42 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_GRL_only/seed42 ----
+---- 12:35:22 DONE  ACR_GRL_only seed=42 (exit 0) ----
+---- 12:35:22 START ACR_GRL_only seed=1234 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_GRL_only/seed1234 ----
+---- 12:56:29 DONE  ACR_GRL_only seed=1234 (exit 0) ----
+---- 12:56:29 START ACR_GRL_only seed=31415 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_GRL_only/seed31415 ----
+---- 13:27:21 DONE  ACR_GRL_only seed=31415 (exit 0) ----
+######## 13:27:21 >>> run_ACR_discrete.sh ########
+==== CONFIG=ACR_discrete  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_discrete ====
+     V921_USE_DAS=1 DAS_MODE=curriculum USE_HFT=1 USE_SPEC_AUGMENT=1
+     V13_FREQ_WEIGHT=0.05 V13_GRL_WEIGHT=0.3 V13_GRL_DISCRETE=1 V13_GRL_BINS=3
+---- 13:27:21 START ACR_discrete seed=42 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_discrete/seed42 ----
+---- 13:46:20 DONE  ACR_discrete seed=42 (exit 0) ----
+---- 13:46:20 START ACR_discrete seed=1234 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_discrete/seed1234 ----
+---- 14:06:45 DONE  ACR_discrete seed=1234 (exit 0) ----
+---- 14:06:45 START ACR_discrete seed=31415 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_discrete/seed31415 ----
+EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/scripts/_base_env.sh: line 59:  2624 Segmentation fault      "$PY" baseline_v20/train.py --epochs "$EPOCHS" --run-dir "$RD" --seed "$SEED" --progress simple > "$LOG" 2>&1
+---- 14:06:46 DONE  ACR_discrete seed=31415 (exit 0) ----
+######## 14:06:46 >>> run_DAS_ERM.sh ########
+==== CONFIG=DAS_ERM  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/DAS_ERM ====
+     V921_USE_DAS=0 DAS_MODE=curriculum USE_HFT=0 USE_SPEC_AUGMENT=0
+     V13_FREQ_WEIGHT=0 V13_GRL_WEIGHT=0 V13_GRL_DISCRETE=0 V13_GRL_BINS=3
+---- 14:06:46 START DAS_ERM seed=42 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/DAS_ERM/seed42 ----
+EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/scripts/_base_env.sh: line 59:  2632 Segmentation fault      "$PY" baseline_v20/train.py --epochs "$EPOCHS" --run-dir "$RD" --seed "$SEED" --progress simple > "$LOG" 2>&1
+---- 14:06:51 DONE  DAS_ERM seed=42 (exit 0) ----
+---- 14:06:51 START DAS_ERM seed=1234 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/DAS_ERM/seed1234 ----
+---- 14:25:03 DONE  DAS_ERM seed=1234 (exit 0) ----
+---- 14:25:03 START DAS_ERM seed=31415 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/DAS_ERM/seed31415 ----
+---- 14:43:17 DONE  DAS_ERM seed=31415 (exit 0) ----
+######## 14:43:17 >>> run_DAS_stretch_only.sh ########
+==== CONFIG=DAS_stretch_only  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/DAS_stretch_only ====
+     V921_USE_DAS=1 DAS_MODE=curriculum USE_HFT=0 USE_SPEC_AUGMENT=0
+     V13_FREQ_WEIGHT=0 V13_GRL_WEIGHT=0 V13_GRL_DISCRETE=0 V13_GRL_BINS=3
+---- 14:43:17 START DAS_stretch_only seed=42 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/DAS_stretch_only/seed42 ----
+---- 15:01:33 DONE  DAS_stretch_only seed=42 (exit 0) ----
+---- 15:01:33 START DAS_stretch_only seed=1234 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/DAS_stretch_only/seed1234 ----
+---- 15:19:49 DONE  DAS_stretch_only seed=1234 (exit 0) ----
+---- 15:19:49 START DAS_stretch_only seed=31415 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/DAS_stretch_only/seed31415 ----
+---- 15:38:08 DONE  DAS_stretch_only seed=31415 (exit 0) ----
+######## 15:38:08 >>> run_SCHED_fixedfull_ACR.sh ########
+==== CONFIG=SCHED_fixedfull_ACR  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/SCHED_fixedfull_ACR ====
+     V921_USE_DAS=1 DAS_MODE=fixed_full USE_HFT=1 USE_SPEC_AUGMENT=1
+     V13_FREQ_WEIGHT=0.05 V13_GRL_WEIGHT=0.3 V13_GRL_DISCRETE=0 V13_GRL_BINS=3
+---- 15:38:08 START SCHED_fixedfull_ACR seed=42 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/SCHED_fixedfull_ACR/seed42 ----
+---- 15:56:36 DONE  SCHED_fixedfull_ACR seed=42 (exit 0) ----
+---- 15:56:36 START SCHED_fixedfull_ACR seed=1234 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/SCHED_fixedfull_ACR/seed1234 ----
+---- 16:15:07 DONE  SCHED_fixedfull_ACR seed=1234 (exit 0) ----
+---- 16:15:07 START SCHED_fixedfull_ACR seed=31415 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/SCHED_fixedfull_ACR/seed31415 ----
+---- 16:33:39 DONE  SCHED_fixedfull_ACR seed=31415 (exit 0) ----
+######## 16:33:39 >>> run_SCHED_fixednarrow_ACR.sh ########
+==== CONFIG=SCHED_fixednarrow_ACR  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/SCHED_fixednarrow_ACR ====
+     V921_USE_DAS=1 DAS_MODE=fixed_narrow USE_HFT=1 USE_SPEC_AUGMENT=1
+     V13_FREQ_WEIGHT=0.05 V13_GRL_WEIGHT=0.3 V13_GRL_DISCRETE=0 V13_GRL_BINS=3
+---- 16:33:39 START SCHED_fixednarrow_ACR seed=42 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/SCHED_fixednarrow_ACR/seed42 ----
+---- 16:52:07 DONE  SCHED_fixednarrow_ACR seed=42 (exit 0) ----
+---- 16:52:07 START SCHED_fixednarrow_ACR seed=1234 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/SCHED_fixednarrow_ACR/seed1234 ----
+---- 17:10:33 DONE  SCHED_fixednarrow_ACR seed=1234 (exit 0) ----
+---- 17:10:33 START SCHED_fixednarrow_ACR seed=31415 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/SCHED_fixednarrow_ACR/seed31415 ----
+---- 17:29:01 DONE  SCHED_fixednarrow_ACR seed=31415 (exit 0) ----
+######## SUPP_ABLATION FORMAL DONE  2026-06-09 17:29:01 ########
+######## SUPP_ABLATION FORMAL START 2026-06-09 17:29:41 ########
+######## 17:29:41 >>> run_ACR_Lfreq_only.sh ########
+==== CONFIG=ACR_Lfreq_only  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_Lfreq_only ====
+     V921_USE_DAS=1 DAS_MODE=curriculum USE_HFT=1 USE_SPEC_AUGMENT=1
+     V13_FREQ_WEIGHT=0.05 V13_GRL_WEIGHT=0 V13_GRL_DISCRETE=0 V13_GRL_BINS=3
+---- 17:29:41 SKIP  ACR_Lfreq_only seed=42 (already complete: epoch_ckpts/ep100.pt) ----
+---- 17:29:41 SKIP  ACR_Lfreq_only seed=1234 (already complete: epoch_ckpts/ep100.pt) ----
+---- 17:29:41 SKIP  ACR_Lfreq_only seed=31415 (already complete: epoch_ckpts/ep100.pt) ----
+######## 17:29:41 >>> run_ACR_GRL_only.sh ########
+==== CONFIG=ACR_GRL_only  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_GRL_only ====
+     V921_USE_DAS=1 DAS_MODE=curriculum USE_HFT=1 USE_SPEC_AUGMENT=1
+     V13_FREQ_WEIGHT=0 V13_GRL_WEIGHT=0.3 V13_GRL_DISCRETE=0 V13_GRL_BINS=3
+---- 17:29:41 SKIP  ACR_GRL_only seed=42 (already complete: epoch_ckpts/ep100.pt) ----
+---- 17:29:41 SKIP  ACR_GRL_only seed=1234 (already complete: epoch_ckpts/ep100.pt) ----
+---- 17:29:41 SKIP  ACR_GRL_only seed=31415 (already complete: epoch_ckpts/ep100.pt) ----
+######## 17:29:41 >>> run_ACR_discrete.sh ########
+==== CONFIG=ACR_discrete  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_discrete ====
+     V921_USE_DAS=1 DAS_MODE=curriculum USE_HFT=1 USE_SPEC_AUGMENT=1
+     V13_FREQ_WEIGHT=0.05 V13_GRL_WEIGHT=0.3 V13_GRL_DISCRETE=1 V13_GRL_BINS=3
+---- 17:29:41 SKIP  ACR_discrete seed=42 (already complete: epoch_ckpts/ep100.pt) ----
+---- 17:29:41 SKIP  ACR_discrete seed=1234 (already complete: epoch_ckpts/ep100.pt) ----
+---- 17:29:41 START ACR_discrete seed=31415 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/ACR_discrete/seed31415 ----
+---- 17:48:54 DONE  ACR_discrete seed=31415 (exit 0) ----
+######## 17:48:54 >>> run_DAS_ERM.sh ########
+==== CONFIG=DAS_ERM  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/DAS_ERM ====
+     V921_USE_DAS=0 DAS_MODE=curriculum USE_HFT=0 USE_SPEC_AUGMENT=0
+     V13_FREQ_WEIGHT=0 V13_GRL_WEIGHT=0 V13_GRL_DISCRETE=0 V13_GRL_BINS=3
+---- 17:48:54 START DAS_ERM seed=42 ep=100 -> EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/DAS_ERM/seed42 ----
+---- 18:19:24 DONE  DAS_ERM seed=42 (exit 0) ----
+---- 18:19:24 SKIP  DAS_ERM seed=1234 (already complete: epoch_ckpts/ep100.pt) ----
+---- 18:19:24 SKIP  DAS_ERM seed=31415 (already complete: epoch_ckpts/ep100.pt) ----
+######## 18:19:24 >>> run_DAS_stretch_only.sh ########
+==== CONFIG=DAS_stretch_only  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/DAS_stretch_only ====
+     V921_USE_DAS=1 DAS_MODE=curriculum USE_HFT=0 USE_SPEC_AUGMENT=0
+     V13_FREQ_WEIGHT=0 V13_GRL_WEIGHT=0 V13_GRL_DISCRETE=0 V13_GRL_BINS=3
+---- 18:19:24 SKIP  DAS_stretch_only seed=42 (already complete: epoch_ckpts/ep100.pt) ----
+---- 18:19:24 SKIP  DAS_stretch_only seed=1234 (already complete: epoch_ckpts/ep100.pt) ----
+---- 18:19:24 SKIP  DAS_stretch_only seed=31415 (already complete: epoch_ckpts/ep100.pt) ----
+######## 18:19:24 >>> run_SCHED_fixedfull_ACR.sh ########
+==== CONFIG=SCHED_fixedfull_ACR  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/SCHED_fixedfull_ACR ====
+     V921_USE_DAS=1 DAS_MODE=fixed_full USE_HFT=1 USE_SPEC_AUGMENT=1
+     V13_FREQ_WEIGHT=0.05 V13_GRL_WEIGHT=0.3 V13_GRL_DISCRETE=0 V13_GRL_BINS=3
+---- 18:19:24 SKIP  SCHED_fixedfull_ACR seed=42 (already complete: epoch_ckpts/ep100.pt) ----
+---- 18:19:24 SKIP  SCHED_fixedfull_ACR seed=1234 (already complete: epoch_ckpts/ep100.pt) ----
+---- 18:19:24 SKIP  SCHED_fixedfull_ACR seed=31415 (already complete: epoch_ckpts/ep100.pt) ----
+######## 18:19:24 >>> run_SCHED_fixednarrow_ACR.sh ########
+==== CONFIG=SCHED_fixednarrow_ACR  EPOCHS=100  SEEDS=[42 1234 31415]  OUT=EXPERIMENTSRESULT/REVISION_5090/SUPP_ABLATION/SCHED_fixednarrow_ACR ====
+     V921_USE_DAS=1 DAS_MODE=fixed_narrow USE_HFT=1 USE_SPEC_AUGMENT=1
+     V13_FREQ_WEIGHT=0.05 V13_GRL_WEIGHT=0.3 V13_GRL_DISCRETE=0 V13_GRL_BINS=3
+---- 18:19:25 SKIP  SCHED_fixednarrow_ACR seed=42 (already complete: epoch_ckpts/ep100.pt) ----
+---- 18:19:25 SKIP  SCHED_fixednarrow_ACR seed=1234 (already complete: epoch_ckpts/ep100.pt) ----
+---- 18:19:25 SKIP  SCHED_fixednarrow_ACR seed=31415 (already complete: epoch_ckpts/ep100.pt) ----
+######## SUPP_ABLATION FORMAL DONE  2026-06-09 18:19:25 ########

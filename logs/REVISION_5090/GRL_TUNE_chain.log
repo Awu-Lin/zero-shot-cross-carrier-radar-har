@@ -1,0 +1,9 @@
+==== 09:11:58 START GRL weight=0.1 -> EXPERIMENTSRESULT/REVISION_5090/GRL_TUNE/w0.1_seed42 ====
+==== 09:30:51 DONE  GRL weight=0.1 (exit 0) ====
+==== 09:30:51 START GRL weight=0.3 -> EXPERIMENTSRESULT/REVISION_5090/GRL_TUNE/w0.3_seed42 ====
+==== 09:49:47 DONE  GRL weight=0.3 (exit 0) ====
+==== 09:49:47 START GRL weight=1.0 -> EXPERIMENTSRESULT/REVISION_5090/GRL_TUNE/w1.0_seed42 ====
+==== 10:08:23 DONE  GRL weight=1.0 (exit 0) ====
+==== 10:08:23 START GRL weight=3.0 -> EXPERIMENTSRESULT/REVISION_5090/GRL_TUNE/w3.0_seed42 ====
+==== 10:27:01 DONE  GRL weight=3.0 (exit 0) ====
+==== ALL GRL TUNE RUNS DONE ====

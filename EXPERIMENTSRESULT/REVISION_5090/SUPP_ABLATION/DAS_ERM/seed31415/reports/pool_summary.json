@@ -1,0 +1,205 @@
+{
+  "pool_threshold": 0.9,
+  "pool_period": 10,
+  "selection_metric": "dev77_f1",
+  "pool_size": 6,
+  "members": [
+    {
+      "epoch": 50,
+      "ckpt_path": "EXPERIMENTSRESULT\\REVISION_5090\\SUPP_ABLATION\\DAS_ERM\\seed31415\\checkpoints\\pool_ep050_ema.pt",
+      "source_val_acc_ema": 0.9197530864197531,
+      "source_val_f1_ema": 0.920746687242851,
+      "dev77_acc": 0.2,
+      "dev77_f1": 0.086899275839368,
+      "dev77_per_class": {
+        "Away": 0.0,
+        "Bend": 1.0,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 0.4
+      },
+      "test77_acc": 0.2302158273381295,
+      "test77_f1": 0.10747863247863247,
+      "test77_per_class": {
+        "Away": 0.0,
+        "Bend": 1.0,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 0.625
+      }
+    },
+    {
+      "epoch": 60,
+      "ckpt_path": "EXPERIMENTSRESULT\\REVISION_5090\\SUPP_ABLATION\\DAS_ERM\\seed31415\\checkpoints\\pool_ep060_ema.pt",
+      "source_val_acc_ema": 0.9259259259259259,
+      "source_val_f1_ema": 0.9276938696344532,
+      "dev77_acc": 0.22142857142857142,
+      "dev77_f1": 0.09741496598639456,
+      "dev77_per_class": {
+        "Away": 0.0,
+        "Bend": 0.95,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 0.6
+      },
+      "test77_acc": 0.25539568345323743,
+      "test77_f1": 0.11464026232881117,
+      "test77_per_class": {
+        "Away": 0.0,
+        "Bend": 1.0,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 0.8
+      }
+    },
+    {
+      "epoch": 70,
+      "ckpt_path": "EXPERIMENTSRESULT\\REVISION_5090\\SUPP_ABLATION\\DAS_ERM\\seed31415\\checkpoints\\pool_ep070_ema.pt",
+      "source_val_acc_ema": 0.9382716049382716,
+      "source_val_f1_ema": 0.9403846153846154,
+      "dev77_acc": 0.25,
+      "dev77_f1": 0.11153227248346147,
+      "dev77_per_class": {
+        "Away": 0.0,
+        "Bend": 0.95,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 0.8
+      },
+      "test77_acc": 0.2733812949640288,
+      "test77_f1": 0.12172905381733903,
+      "test77_per_class": {
+        "Away": 0.0,
+        "Bend": 1.0,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 0.925
+      }
+    },
+    {
+      "epoch": 80,
+      "ckpt_path": "EXPERIMENTSRESULT\\REVISION_5090\\SUPP_ABLATION\\DAS_ERM\\seed31415\\checkpoints\\pool_ep080_ema.pt",
+      "source_val_acc_ema": 0.9444444444444444,
+      "source_val_f1_ema": 0.9459968602825747,
+      "dev77_acc": 0.2714285714285714,
+      "dev77_f1": 0.12140358392232455,
+      "dev77_per_class": {
+        "Away": 0.0,
+        "Bend": 0.95,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 0.95
+      },
+      "test77_acc": 0.27697841726618705,
+      "test77_f1": 0.12335458381970009,
+      "test77_per_class": {
+        "Away": 0.0,
+        "Bend": 0.9743589743589743,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 0.975
+      }
+    },
+    {
+      "epoch": 90,
+      "ckpt_path": "EXPERIMENTSRESULT\\REVISION_5090\\SUPP_ABLATION\\DAS_ERM\\seed31415\\checkpoints\\pool_ep090_ema.pt",
+      "source_val_acc_ema": 0.9444444444444444,
+      "source_val_f1_ema": 0.9459968602825747,
+      "dev77_acc": 0.2714285714285714,
+      "dev77_f1": 0.1219520940906483,
+      "dev77_per_class": {
+        "Away": 0.0,
+        "Bend": 0.95,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 0.95
+      },
+      "test77_acc": 0.2805755395683453,
+      "test77_f1": 0.12614610121130063,
+      "test77_per_class": {
+        "Away": 0.0,
+        "Bend": 0.9743589743589743,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 1.0
+      }
+    },
+    {
+      "epoch": 100,
+      "ckpt_path": "EXPERIMENTSRESULT\\REVISION_5090\\SUPP_ABLATION\\DAS_ERM\\seed31415\\checkpoints\\pool_ep100_ema.pt",
+      "source_val_acc_ema": 0.9444444444444444,
+      "source_val_f1_ema": 0.9459968602825747,
+      "dev77_acc": 0.2642857142857143,
+      "dev77_f1": 0.11888564949789439,
+      "dev77_per_class": {
+        "Away": 0.0,
+        "Bend": 0.9,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 0.95
+      },
+      "test77_acc": 0.27697841726618705,
+      "test77_f1": 0.12568668046928916,
+      "test77_per_class": {
+        "Away": 0.0,
+        "Bend": 0.9487179487179487,
+        "Kneel": 0.0,
+        "Pick": 0.0,
+        "SStep": 0.0,
+        "Sit": 0.0,
+        "Towards": 1.0
+      }
+    }
+  ],
+  "best": {
+    "epoch": 90,
+    "ckpt_path": "EXPERIMENTSRESULT\\REVISION_5090\\SUPP_ABLATION\\DAS_ERM\\seed31415\\checkpoints\\pool_ep090_ema.pt",
+    "source_val_acc_ema": 0.9444444444444444,
+    "source_val_f1_ema": 0.9459968602825747,
+    "dev77_acc": 0.2714285714285714,
+    "dev77_f1": 0.1219520940906483,
+    "dev77_per_class": {
+      "Away": 0.0,
+      "Bend": 0.95,
+      "Kneel": 0.0,
+      "Pick": 0.0,
+      "SStep": 0.0,
+      "Sit": 0.0,
+      "Towards": 0.95
+    },
+    "test77_acc": 0.2805755395683453,
+    "test77_f1": 0.12614610121130063,
+    "test77_per_class": {
+      "Away": 0.0,
+      "Bend": 0.9743589743589743,
+      "Kneel": 0.0,
+      "Pick": 0.0,
+      "SStep": 0.0,
+      "Sit": 0.0,
+      "Towards": 1.0
+    },
+    "best_pool_ema_path": "EXPERIMENTSRESULT\\REVISION_5090\\SUPP_ABLATION\\DAS_ERM\\seed31415\\checkpoints\\best_pool_ema.pt"
+  }
+}

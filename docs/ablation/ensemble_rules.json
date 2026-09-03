@@ -1,0 +1,62 @@
+[
+  {
+    "name": "DAS only (A_REF)",
+    "config": "A_REF",
+    "n_seeds": 3,
+    "single_f1_mean": 0.7666549894063728,
+    "single_f1_std": 0.07627293981284919,
+    "single_acc_mean": 0.7807017543859649,
+    "single_acc_std": 0.07000305054977587,
+    "single_f1_seeds": [
+      0.6707,
+      0.772,
+      0.8573
+    ],
+    "ens_majority_f1": 0.8166330361796217,
+    "ens_majority_acc": 0.8253588516746412,
+    "ens_logitavg_f1": 0.8270163406991359,
+    "ens_logitavg_acc": 0.8349282296650717,
+    "ens_posterior_f1": 0.8219674442753403,
+    "ens_posterior_acc": 0.8301435406698564
+  },
+  {
+    "name": "DAS+ACR (A_V13_GRL)",
+    "config": "A_V13_GRL",
+    "n_seeds": 3,
+    "single_f1_mean": 0.832203752418576,
+    "single_f1_std": 0.03367567557450377,
+    "single_acc_mean": 0.8357256778309411,
+    "single_acc_std": 0.03223506049666307,
+    "single_f1_seeds": [
+      0.791,
+      0.8322,
+      0.8735
+    ],
+    "ens_majority_f1": 0.8512003152544871,
+    "ens_majority_acc": 0.854066985645933,
+    "ens_logitavg_f1": 0.8565778437817949,
+    "ens_logitavg_acc": 0.8588516746411483,
+    "ens_posterior_f1": 0.8562141682516896,
+    "ens_posterior_acc": 0.8588516746411483
+  },
+  {
+    "name": "DAS jitter (E1_jitter)",
+    "config": "E1_jitter",
+    "n_seeds": 3,
+    "single_f1_mean": 0.5176550599185373,
+    "single_f1_std": 0.029848071972684156,
+    "single_acc_mean": 0.5853269537480065,
+    "single_acc_std": 0.0215163278520447,
+    "single_f1_seeds": [
+      0.5599,
+      0.4967,
+      0.4964
+    ],
+    "ens_majority_f1": 0.5371904869085282,
+    "ens_majority_acc": 0.6028708133971292,
+    "ens_logitavg_f1": 0.5368878673628714,
+    "ens_logitavg_acc": 0.6076555023923444,
+    "ens_posterior_f1": 0.543215375279935,
+    "ens_posterior_acc": 0.6124401913875598
+  }
+]

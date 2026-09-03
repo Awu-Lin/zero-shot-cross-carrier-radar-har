@@ -1,0 +1,6 @@
+[data] full-418=418 source-val=162 278-subset=278
+#10 proposed                                      f1=0.8322+/-0.0337 acc=0.8357 src_f1=0.9670 gap=+0.1348 ci95=[0.751,0.826] params=1.85M seeds=[0.791, 0.8322, 0.8735]
+#11 Proposed + 3-seed gap-aware ensemble (deployment) f1=0.8562 acc=0.8589 ci95=[0.821,0.889] (cited 0.857/0.859)
+
+[xcheck] proposed-family 278 vs history max|diff| = 0.0000 (want ~0.0000)
+saved G:\zhanghe\zero-shot-cross-carrier-radar-har\EXPERIMENTSRESULT\REVISION_5090\public_baseline\pb_results_strong_repro.json and G:\zhanghe\zero-shot-cross-carrier-radar-har\EXPERIMENTSRESULT\REVISION_5090\public_baseline\pb_results_strong_repro_auto.md

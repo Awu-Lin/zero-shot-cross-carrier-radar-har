@@ -1,0 +1,5 @@
+[data] N=418 configs in cache: ['A_V13_GRL']
+DAS+ACR ensemble - DAS+ACR single      obs=+2.40pp  95%CI=[+0.86,+3.98]pp  P(>0)=0.999
+[note] external-baseline delta skipped (no eval_out/ext_baseline_preds.npy)
+
+[done] wrote EXPERIMENTSRESULT\REVISION_5090\SUPP_ABLATION\eval_out\paired_bootstrap_ci.md

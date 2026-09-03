@@ -1,0 +1,107 @@
+[data] full-418=418  278-subset=278
+[supp] AGG_INCLUDE_SUPP=1 -> +7 supplementary configs
+[skip] A_V20 seed42: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_V20\seed42
+[skip] A_V20 seed1234: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_V20\seed1234
+[skip] A_V20 seed31415: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_V20\seed31415
+[skip] A_V20: no seeds evaluated
+[skip] A_V13 seed42: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_V13\seed42
+[skip] A_V13 seed1234: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_V13\seed1234
+[skip] A_V13 seed31415: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_V13\seed31415
+[skip] A_V13: no seeds evaluated
+[skip] A_V15 seed42: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_V15\seed42
+[skip] A_V15 seed1234: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_V15\seed1234
+[skip] A_V15 seed31415: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_V15\seed31415
+[skip] A_V15: no seeds evaluated
+[skip] A_REF seed42: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_REF\seed42
+[skip] A_REF seed1234: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_REF\seed1234
+[skip] A_REF seed31415: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_REF\seed31415
+[skip] A_REF: no seeds evaluated
+[skip] E1_noDAS seed42: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E1_noDAS\seed42
+[skip] E1_noDAS seed1234: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E1_noDAS\seed1234
+[skip] E1_noDAS seed31415: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E1_noDAS\seed31415
+[skip] E1_noDAS: no seeds evaluated
+A_V13_GRL seed42   : 418 acc/f1=0.7967/0.7910  278 f1=0.8168 (hist 0.8168, d+0.0000)
+A_V13_GRL seed1234 : 418 acc/f1=0.8349/0.8322  278 f1=0.8575 (hist 0.8575, d+0.0000)
+A_V13_GRL seed31415: 418 acc/f1=0.8756/0.8735  278 f1=0.8902 (hist 0.8902, d+0.0000)
+[skip] A_GRLWC seed42: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_GRLWC\seed42
+[skip] A_GRLWC seed1234: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_GRLWC\seed1234
+[skip] A_GRLWC seed31415: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\A_GRLWC\seed31415
+[skip] A_GRLWC: no seeds evaluated
+[skip] E1_jitter seed42: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E1_jitter\seed42
+[skip] E1_jitter seed1234: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E1_jitter\seed1234
+[skip] E1_jitter seed31415: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E1_jitter\seed31415
+[skip] E1_jitter: no seeds evaluated
+[skip] E1_DANN seed42: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E1_DANN\seed42
+[skip] E1_DANN seed1234: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E1_DANN\seed1234
+[skip] E1_DANN seed31415: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E1_DANN\seed31415
+[skip] E1_DANN: no seeds evaluated
+[skip] E1B_Pjitter seed42: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E1B_Pjitter\seed42
+[skip] E1B_Pjitter seed1234: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E1B_Pjitter\seed1234
+[skip] E1B_Pjitter seed31415: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E1B_Pjitter\seed31415
+[skip] E1B_Pjitter: no seeds evaluated
+[skip] E2_full seed42: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E2_full\seed42
+[skip] E2_full seed1234: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E2_full\seed1234
+[skip] E2_full seed31415: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E2_full\seed31415
+[skip] E2_full: no seeds evaluated
+[skip] E2_narrow seed42: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E2_narrow\seed42
+[skip] E2_narrow seed1234: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E2_narrow\seed1234
+[skip] E2_narrow seed31415: no final-EMA ckpt under EXPERIMENTSRESULT\REVISION_5090\E2_narrow\seed31415
+[skip] E2_narrow: no seeds evaluated
+ACR_Lfreq_only seed42   : 418 acc/f1=0.7895/0.7846  278 f1=0.8061 (hist 0.8061, d+0.0000)
+ACR_Lfreq_only seed1234 : 418 acc/f1=0.8349/0.8267  278 f1=0.8445 (hist 0.8445, d+0.0000)
+ACR_Lfreq_only seed31415: 418 acc/f1=0.8325/0.8297  278 f1=0.8462 (hist 0.8462, d+0.0000)
+ACR_GRL_only seed42   : 418 acc/f1=0.8134/0.8069  278 f1=0.8397 (hist 0.8397, d+0.0000)
+ACR_GRL_only seed1234 : 418 acc/f1=0.8301/0.8268  278 f1=0.8457 (hist 0.8457, d+0.0000)
+ACR_GRL_only seed31415: 418 acc/f1=0.8517/0.8454  278 f1=0.8532 (hist 0.8532, d+0.0000)
+ACR_discrete seed42   : 418 acc/f1=0.7847/0.7746  278 f1=0.7726 (hist 0.7726, d+0.0000)
+ACR_discrete seed1234 : 418 acc/f1=0.7751/0.7709  278 f1=0.7945 (hist 0.7945, d+0.0000)
+ACR_discrete seed31415: 418 acc/f1=0.8469/0.8440  278 f1=0.8650 (hist 0.8650, d+0.0000)
+DAS_ERM   seed42   : 418 acc/f1=0.2344/0.1211  278 f1=0.1291 (hist 0.1291, d+0.0000)
+DAS_ERM   seed1234 : 418 acc/f1=0.3062/0.1941  278 f1=0.1789 (hist 0.1789, d+0.0000)
+DAS_ERM   seed31415: 418 acc/f1=0.2727/0.1232  278 f1=0.1257 (hist 0.1257, d+0.0000)
+DAS_stretch_only seed42   : 418 acc/f1=0.6292/0.5866  278 f1=0.5865 (hist 0.5865, d+0.0000)
+DAS_stretch_only seed1234 : 418 acc/f1=0.8110/0.8038  278 f1=0.8087 (hist 0.8087, d+0.0000)
+DAS_stretch_only seed31415: 418 acc/f1=0.7416/0.7208  278 f1=0.7412 (hist 0.7412, d+0.0000)
+SCHED_fixedfull_ACR seed42   : 418 acc/f1=0.5478/0.5535  278 f1=0.5673 (hist 0.5673, d+0.0000)
+SCHED_fixedfull_ACR seed1234 : 418 acc/f1=0.6627/0.6273  278 f1=0.6447 (hist 0.6447, d+0.0000)
+SCHED_fixedfull_ACR seed31415: 418 acc/f1=0.7081/0.6962  278 f1=0.7272 (hist 0.7272, d+0.0000)
+SCHED_fixednarrow_ACR seed42   : 418 acc/f1=0.8301/0.8149  278 f1=0.8204 (hist 0.8204, d+0.0000)
+SCHED_fixednarrow_ACR seed1234 : 418 acc/f1=0.8636/0.8605  278 f1=0.8851 (hist 0.8851, d+0.0000)
+SCHED_fixednarrow_ACR seed31415: 418 acc/f1=0.7727/0.7243  278 f1=0.7471 (hist 0.7471, d+0.0000)
+
+# Component ablation -- final-EMA honest rule, full-418 77GHz, 3 seeds (42/1234/31415)
+
+Selection = EMA weights at the last epoch (ep100); no target/source-val peeking.
+
+| Variant | Accuracy | Macro-F1 | d macro-F1 (pp) |
+|---|---|---|---:|
+| V13-as-GRL (shown w0.3) | 0.836 ¡À 0.032 | 0.832 ¡À 0.034 | +0.0 |
+| ACR L_freq only | 0.819 ¡À 0.021 | 0.814 ¡À 0.021 | -1.9 |
+| ACR GRL only | 0.832 ¡À 0.016 | 0.826 ¡À 0.016 | -0.6 |
+| ACR discrete adversary | 0.802 ¡À 0.032 | 0.796 ¡À 0.034 | -3.6 |
+| DAS ERM (no aug) | 0.271 ¡À 0.029 | 0.146 ¡À 0.034 | -68.6 |
+| DAS stretch only | 0.727 ¡À 0.075 | 0.704 ¡À 0.089 | -12.8 |
+| DAS fixed-full + ACR | 0.640 ¡À 0.067 | 0.626 ¡À 0.058 | -20.7 |
+| DAS fixed-narrow + ACR | 0.822 ¡À 0.038 | 0.800 ¡À 0.057 | -3.2 |
+
+Per-seed Macro-F1 (full-418):
+
+| Variant | seed42 | seed1234 | seed31415 |
+|---|---:|---:|---:|
+| V13-as-GRL (shown w0.3) | 0.7910 | 0.8322 | 0.8735 |
+| ACR L_freq only | 0.7846 | 0.8267 | 0.8297 |
+| ACR GRL only | 0.8069 | 0.8268 | 0.8454 |
+| ACR discrete adversary | 0.7746 | 0.7709 | 0.8440 |
+| DAS ERM (no aug) | 0.1211 | 0.1941 | 0.1232 |
+| DAS stretch only | 0.5866 | 0.8038 | 0.7208 |
+| DAS fixed-full + ACR | 0.5535 | 0.6273 | 0.6962 |
+| DAS fixed-narrow + ACR | 0.8149 | 0.8605 | 0.7243 |
+
+## Component contributions (full-418 macro-F1, mean)
+- ACR GRL half: A_V13_GRL - ACR_Lfreq_only = **+1.9 pp**
+- ACR residual half: A_V13_GRL - ACR_GRL_only = **+0.6 pp**
+- continuous vs discrete adversary: A_V13_GRL - ACR_discrete = **+3.6 pp**
+- Doppler-stretch alone over ERM: DAS_stretch_only - DAS_ERM = **+55.8 pp**
+
+## Eval-harness cross-check (278-subset final-EMA vs run history last-epoch)
+max |diff| vs history.json = 0.0000 (should be ~0 -> harness validated)

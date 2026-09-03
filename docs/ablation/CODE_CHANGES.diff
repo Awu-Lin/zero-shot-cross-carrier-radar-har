@@ -1,0 +1,345 @@
+########## DIFF: baseline_v20/config.py ##########
+--- baseline_v20/config.py.bak	2026-06-09 02:18:16.655802700 -0400
++++ baseline_v20/config.py	2026-06-09 02:18:48.238929800 -0400
+@@ -154,12 +154,17 @@
+ # checkpoint selection). Removes disk I/O; does NOT affect results or metrics.
+ SKIP_LAST_CKPT = os.environ.get("V921_SKIP_LAST_CKPT", "0") == "1"
+ 
+-USE_HFT = True
++# HFT / SpecAugment are generic radar augmentations applied INDEPENDENTLY of the
++# DAS Doppler-stretch (both default ON -> reproduces current behaviour exactly).
++# Env-gated for the P0-B "DAS body" ablation: a true ERM row needs all three off
++# (USE_DAS=0, USE_HFT=0, USE_SPEC_AUGMENT=0); a stretch-only row needs USE_DAS=1
++# with USE_HFT=0, USE_SPEC_AUGMENT=0. Honored on both CPU and FAST_GPU paths.
++USE_HFT = os.environ.get("V921_USE_HFT", "1") == "1"
+ HFT_P = 0.65
+ HFT_FLOOR_AMP = 0.05
+ HFT_HF_AMP = 0.08
+ 
+-USE_SPEC_AUGMENT = True
++USE_SPEC_AUGMENT = os.environ.get("V921_USE_SPEC_AUGMENT", "1") == "1"
+ TIME_MASK_P = 0.6
+ DOPPLER_MASK_P = 0.6
+ TIME_MASK_FRAC = 0.10
+@@ -241,6 +246,19 @@
+ #              directly targets what the carrier-leakage probe measures.
+ V13_GRL_TARGET = os.environ.get("V13_GRL_TARGET", "shown")   # shown | base
+ 
++# V13-as-GRL DISCRETE mode (P0-A "ordinary discrete domain adversary" control).
++# Default 0 = OFF -> the adversary is our CONTINUOUS log-carrier regressor (1 output,
++# SmoothL1 on log f_eff); existing runs are byte-identical. When V13_GRL_DISCRETE=1
++# the adversary instead outputs V13_GRL_BINS logits and is trained with CROSS-ENTROPY
++# on a carrier-BIN label: the continuous log f_eff (= log f_src + r, the same target
++# the regressor sees) is bucketed into V13_GRL_BINS equal-width bins over the DAS
++# curriculum log-carrier range (see v9_2_1lib.das_log_carrier_range; the bin edges
++# are computed once at trainer setup and logged). This is the standard discrete
++# domain-adversary baseline vs our continuous-carrier regressor. Same grad_reverse
++# (z_cls, lambda) and same V13_GRL_WEIGHT as the continuous mode.
++V13_GRL_DISCRETE = os.environ.get("V13_GRL_DISCRETE", "0") == "1"
++V13_GRL_BINS = int(os.environ.get("V13_GRL_BINS", "3"))
++
+ # ---- Reviewer supplementary experiments (2026-06-08) ----
+ # Family A (#1) -- deterministic physical baseline. Resample every image's
+ # Doppler axis to a COMMON reference carrier (das scale = ref / f_src), applied
+
+########## DIFF: baseline_v20/v9_2_1lib.py ##########
+--- baseline_v20/v9_2_1lib.py.bak	2026-06-09 02:18:16.668902200 -0400
++++ baseline_v20/v9_2_1lib.py	2026-06-09 02:20:07.272239800 -0400
+@@ -110,6 +110,32 @@
+     raise ValueError(f"unknown DAS_MODE: {mode!r}")
+ 
+ 
++def das_log_carrier_range() -> tuple[float, float]:
++    """Global (min, max) NATURAL-LOG carrier (GHz) the DAS schedule can show.
++
++    Used only to bin the DISCRETE carrier adversary (config.V13_GRL_DISCRETE=1).
++    The adversary target is log f_eff = log f_src + r = log f_virt, where f_virt is
++    sampled uniformly-in-log inside the active stage's [f_low, f_high]. The discrete
++    bins must therefore cover the WIDEST carrier range the schedule visits:
++      curriculum   -> union of the 3 stage bands = [min stage f_low, max stage f_high]
++      fixed_full   -> [DAS_FIXED_FULL_F_LOW_GHZ,   DAS_FIXED_FULL_F_HIGH_GHZ]
++      fixed_narrow -> [DAS_FIXED_NARROW_F_LOW_GHZ, DAS_FIXED_NARROW_F_HIGH_GHZ]
++    Source-band carriers of no-DAS samples (f_eff in {10, 24} GHz) fall inside this
++    range, so every sample maps to a valid bin.
++    """
++    mode = getattr(config, "DAS_MODE", "curriculum")
++    if mode == "fixed_full":
++        lo, hi = config.DAS_FIXED_FULL_F_LOW_GHZ, config.DAS_FIXED_FULL_F_HIGH_GHZ
++    elif mode == "fixed_narrow":
++        lo, hi = config.DAS_FIXED_NARROW_F_LOW_GHZ, config.DAS_FIXED_NARROW_F_HIGH_GHZ
++    else:  # curriculum (default) and any other mode -> union of the 3 stage bands
++        lo = min(config.DAS_STAGE1_F_LOW_GHZ, config.DAS_STAGE2_F_LOW_GHZ,
++                 config.DAS_STAGE3_F_LOW_GHZ)
++        hi = max(config.DAS_STAGE1_F_HIGH_GHZ, config.DAS_STAGE2_F_HIGH_GHZ,
++                 config.DAS_STAGE3_F_HIGH_GHZ)
++    return math.log(float(lo)), math.log(float(hi))
++
++
+ # Make pair loaders honour DAS_MODE too: the V9 base ExactPairDataset
+ # resolves `das_stage_for_epoch` from its own module globals, so we
+ # point that name at our wrapper.
+@@ -382,24 +408,32 @@
+ class CarrierAdversary(nn.Module):
+     """V13-as-GRL adversarial carrier head on z_cls (the kinematic neck feature).
+ 
+-    Regresses the CONTINUOUS log-carrier log(f_eff) from z_cls. It is fed
+-    grad_reverse(z_cls, lambda) so that minimizing its (smooth-L1) regression
+-    loss MAXIMIZES the encoder's carrier confusion: through the reversed
+-    gradient the encoder is pushed to make z_cls carrier-uninformative, while
+-    the head itself still learns to read whatever carrier signal remains.
++    Two modes, selected by `out_dim`:
++      out_dim == 1 (default, CONTINUOUS -- our method): regresses the CONTINUOUS
++        log-carrier log(f_eff) from z_cls via smooth-L1. Byte-identical to the
++        original head.
++      out_dim == K > 1 (DISCRETE -- config.V13_GRL_DISCRETE=1): outputs K
++        carrier-BIN logits, trained with cross-entropy on a binned log(f_eff)
++        label. This is the ordinary discrete domain-adversary control.
++
++    Either way it is fed grad_reverse(z_cls, lambda) so that minimizing its loss
++    MAXIMIZES the encoder's carrier confusion: through the reversed gradient the
++    encoder is pushed to make z_cls carrier-uninformative, while the head itself
++    still learns to read whatever carrier signal remains.
+ 
+     Only built/optimized when config.V13_GRL_WEIGHT>0; at inference z_cls is
+     used directly by the classifier and this head is discarded (not in EMA),
+     exactly like the DANN DomainClassifier.
+     """
+ 
+-    def __init__(self, feat_dim: int, hidden: int = 128):
++    def __init__(self, feat_dim: int, hidden: int = 128, out_dim: int = 1):
+         super().__init__()
++        self.out_dim = out_dim
+         self.head = nn.Sequential(
+             nn.Linear(feat_dim, hidden),
+             nn.ReLU(inplace=True),
+             nn.Dropout(0.2),
+-            nn.Linear(hidden, 1),
++            nn.Linear(hidden, out_dim),
+         )
+ 
+     def forward(self, z_cls):
+
+########## DIFF: EXPERIMENTSRESULT/v15_v18_common_train.py ##########
+--- EXPERIMENTSRESULT/v15_v18_common_train.py.bak	2026-06-09 02:18:16.681412800 -0400
++++ EXPERIMENTSRESULT/v15_v18_common_train.py	2026-06-09 02:22:38.378583700 -0400
+@@ -478,10 +478,14 @@
+     # layer so the encoder is pushed to make z_cls carrier-uninformative.
+     carrier_adv = None
+     grl_band_log_ghz = None
++    grl_discrete = bool(getattr(config, "V13_GRL_DISCRETE", False))
++    grl_bins = int(getattr(config, "V13_GRL_BINS", 3))
++    grl_bin_edges = None          # interior edges (K-1,) for torch.bucketize
+     if float(getattr(config, "V13_GRL_WEIGHT", 0.0)) > 0.0:
+         carrier_adv = CarrierAdversary(
+             config.HEAD_HIDDEN,
+             hidden=int(getattr(config, "V13_GRL_HIDDEN", 128)),
++            out_dim=(grl_bins if grl_discrete else 1),
+         ).to(device)
+         trainable += list(carrier_adv.parameters())
+         # per-band source carrier in GHz indexed by d_src (0->10GHz, 1->24GHz)
+@@ -490,6 +494,19 @@
+             torch.tensor([float(_pf(f)) for f in config.TRAIN_FREQS],
+                          dtype=torch.float32, device=device)
+         )
++        if grl_discrete:
++            # Discrete domain-adversary control: equal-width bins over the DAS
++            # curriculum log-carrier range. The full edge set has grl_bins+1 points;
++            # bucketize uses the grl_bins-1 INTERIOR edges (log f_eff below the first
++            # -> bin 0, at/above the last -> bin K-1).
++            from v9_2_1lib import das_log_carrier_range as _dlcr
++            _lo, _hi = _dlcr()
++            _full_edges = torch.linspace(_lo, _hi, grl_bins + 1, device=device)
++            grl_bin_edges = _full_edges[1:-1].contiguous()
++            _edges_ghz = [round(float(math.exp(e)), 2) for e in _full_edges.tolist()]
++            log(f"V13_GRL_DISCRETE=1 bins={grl_bins} CE-on-carrier-bin; "
++                f"log f_eff range=[{_lo:.4f},{_hi:.4f}] "
++                f"bin edges (GHz)={_edges_ghz}")
+ 
+     n_trainable = sum(p.numel() for p in trainable)
+     extras = []
+@@ -544,6 +561,9 @@
+     log(f"use_das={config.USE_DAS}")
+     if config.USE_DAS:
+         log(f"das_mode={getattr(config, 'DAS_MODE', 'curriculum')} initial_stage={das_stage_for_epoch(1)}")
++    # Provenance for the P0-B aug ablation: report the (env-gated) generic radar
++    # augmentation flags so the ablation row is self-documenting in train.log.
++    log(f"aug_flags: USE_HFT={config.USE_HFT} USE_SPEC_AUGMENT={config.USE_SPEC_AUGMENT}")
+     log(f"adapter_mode={args.adapter_mode}")
+ 
+     ema = ModelEMA(model, config.EMA_DECAY)
+@@ -766,10 +786,16 @@
+                     else:
+                         # target the EFFECTIVE (DAS'd) carrier the sample shows.
+                         log_f_eff = grl_band_log_ghz[d_src] + r_src.float()
+-                    pred_carrier = carrier_adv(
+-                        grad_reverse(z_neck_src, grl_lambda)
+-                    ).squeeze(-1)
+-                    loss_grl = F.smooth_l1_loss(pred_carrier, log_f_eff)
++                    adv_out = carrier_adv(grad_reverse(z_neck_src, grl_lambda))
++                    if grl_discrete:
++                        # discrete domain-adversary control: bin the SAME log f_eff
++                        # the regressor sees, train the K-way head with cross-entropy.
++                        bin_idx = torch.bucketize(
++                            log_f_eff, grl_bin_edges
++                        ).clamp_(0, grl_bins - 1)
++                        loss_grl = F.cross_entropy(adv_out, bin_idx)
++                    else:
++                        loss_grl = F.smooth_l1_loss(adv_out.squeeze(-1), log_f_eff)
+                 else:
+                     loss_grl = z_neck_src.new_zeros(())
+ 
+
+########## DIFF: baseline_v20/aggregate_ablation_finalema.py ##########
+--- baseline_v20/aggregate_ablation_finalema.py.bak	2026-06-09 02:18:16.694432100 -0400
++++ baseline_v20/aggregate_ablation_finalema.py	2026-06-09 02:37:13.089189400 -0400
+@@ -17,6 +17,7 @@
+ from __future__ import annotations
+ 
+ import json
++import os
+ from pathlib import Path
+ 
+ import numpy as np
+@@ -48,9 +49,35 @@
+ ]
+ SEEDS = [42, 1234, 31415]
+ 
++# Supplementary-ablation runs (under REV/SUPP_ABLATION/<cfg>). Evaluated ONLY when
++# AGG_INCLUDE_SUPP=1 so the default run stays byte-identical to the validated path.
++# Final-EMA ckpt resolves to pool_ep100_ema.pt if present, else epoch_ckpts/ep100.pt
++# (DUMP_EPOCH_CKPTS=1 guarantees the latter). Missing seeds are skipped with a note.
++SUPP_CONFIGS = [
++    ("ACR L_freq only",        "ACR_Lfreq_only"),
++    ("ACR GRL only",           "ACR_GRL_only"),
++    ("ACR discrete adversary", "ACR_discrete"),
++    ("DAS ERM (no aug)",       "DAS_ERM"),
++    ("DAS stretch only",       "DAS_stretch_only"),
++    ("DAS fixed-full + ACR",   "SCHED_fixedfull_ACR"),
++    ("DAS fixed-narrow + ACR", "SCHED_fixednarrow_ACR"),
++]
++TOTAL_EPOCHS = int(os.environ.get("AGG_TOTAL_EPOCHS", "100"))
++
+ _tf = lib.tensor_transform(train=False)
+ 
+ 
++def resolve_ckpt(seed_dir: Path):
++    """final-EMA ckpt: prefer pool_ep{N}_ema.pt, else epoch_ckpts/ep{N:03d}.pt."""
++    pool = seed_dir / "checkpoints" / f"pool_ep{TOTAL_EPOCHS}_ema.pt"
++    if pool.exists():
++        return pool
++    epc = seed_dir / "epoch_ckpts" / f"ep{TOTAL_EPOCHS:03d}.pt"
++    if epc.exists():
++        return epc
++    return None
++
++
+ def cache(df):
+     return torch.stack(
+         [_tf(Image.open(ROOT / p).convert("RGB")) for p in df["path"]]
+@@ -92,23 +119,41 @@
+ 
+     model = lib.TimmBackboneV921(config.DEFAULT_BACKBONE, NC, adapter_mode="lora").to(DEVICE).eval()
+ 
++    # base dir per config: anchors live at REV/<cfg>; SUPP runs at REV/SUPP_ABLATION/<cfg>
++    eval_list = [(n, c, REV / c) for (n, c) in CONFIGS]
++    if os.environ.get("AGG_INCLUDE_SUPP", "0") == "1":
++        eval_list += [(n, c, REV / "SUPP_ABLATION" / c) for (n, c) in SUPP_CONFIGS]
++        print(f"[supp] AGG_INCLUDE_SUPP=1 -> +{len(SUPP_CONFIGS)} supplementary configs")
++
+     rows = []
+     xcheck = []
+-    for name, cfg in CONFIGS:
++    for name, cfg, base in eval_list:
+         a418, f418, a278, f278 = [], [], [], []
+         for s in SEEDS:
+-            ckpt = REV / cfg / f"seed{s}" / "checkpoints" / "pool_ep100_ema.pt"
++            seed_dir = base / f"seed{s}"
++            ckpt = resolve_ckpt(seed_dir)
++            if ckpt is None:
++                print(f"[skip] {cfg} seed{s}: no final-EMA ckpt under {seed_dir}")
++                continue
+             ck = torch.load(ckpt, map_location=DEVICE, weights_only=False)
+             model.load_state_dict({k: v.to(DEVICE) for k, v in ck["ema"].items()}, strict=False)
+             acc418, mf418 = eval_accf1(model, x418, y418)
+             acc278, mf278 = eval_accf1(model, x278, y278)
+             a418.append(acc418); f418.append(mf418); a278.append(acc278); f278.append(mf278)
+             # cross-check: our 278 final-EMA F1 vs run's history last-epoch test77_f1_ema
+-            hist = json.load(open(REV / cfg / f"seed{s}" / "reports" / "history.json"))
+-            hist_lastep = float(hist[-1]["test77_f1_ema"])
+-            xcheck.append((cfg, s, mf278, hist_lastep, mf278 - hist_lastep))
+-            print(f"{cfg:9s} seed{s:<5}: 418 acc/f1={acc418:.4f}/{mf418:.4f}  "
+-                  f"278 f1={mf278:.4f} (hist {hist_lastep:.4f}, d{mf278-hist_lastep:+.4f})")
++            hist_path = seed_dir / "reports" / "history.json"
++            if hist_path.exists():
++                hist = json.load(open(hist_path))
++                hist_lastep = float(hist[-1]["test77_f1_ema"])
++                xcheck.append((cfg, s, mf278, hist_lastep, mf278 - hist_lastep))
++                print(f"{cfg:9s} seed{s:<5}: 418 acc/f1={acc418:.4f}/{mf418:.4f}  "
++                      f"278 f1={mf278:.4f} (hist {hist_lastep:.4f}, d{mf278-hist_lastep:+.4f})")
++            else:
++                print(f"{cfg:9s} seed{s:<5}: 418 acc/f1={acc418:.4f}/{mf418:.4f}  "
++                      f"278 f1={mf278:.4f} (no history.json)")
++        if not f418:
++            print(f"[skip] {cfg}: no seeds evaluated")
++            continue
+         rows.append({
+             "variant": name, "config": cfg,
+             "acc_mean": float(np.mean(a418)), "acc_std": float(np.std(a418)),
+@@ -141,19 +186,44 @@
+         md.append(f"| {r['variant']} | " + " | ".join(f"{v:.4f}" for v in r["f1_seeds"]) + " |")
+     md.append("\n## Component contributions (full-418 macro-F1, mean)")
+     g = {r["config"]: r["f1_mean"] for r in rows}
+-    md.append(f"- DAS (foundation): A_REF {g['A_REF']:.3f} - E1_noDAS {g['E1_noDAS']:.3f} "
+-              f"= **{(g['A_REF']-g['E1_noDAS'])*100:+.1f} pp**")
+-    md.append(f"- falsification (V15) on top of full: Full - (-falsif) "
+-              f"= **{(g['A_V20']-g['A_V13'])*100:+.1f} pp**")
+-    md.append(f"- residual split (V13) on top of full: Full - (-residual) "
+-              f"= **{(g['A_V20']-g['A_V15'])*100:+.1f} pp**")
+-    md.append(f"- V15 alone over DAS-base: A_V15 - A_REF = **{(g['A_V15']-g['A_REF'])*100:+.1f} pp**")
+-    md.append(f"- V13 alone over DAS-base: A_V13 - A_REF = **{(g['A_V13']-g['A_REF'])*100:+.1f} pp**")
+-    md.append(f"- both modules over DAS-base: A_V20 - A_REF = **{(g['A_V20']-g['A_REF'])*100:+.1f} pp** "
+-              f"(vs sum of singles {((g['A_V13']-g['A_REF'])+(g['A_V15']-g['A_REF']))*100:+.1f} pp "
+-              f"-> additivity/complementarity check)")
++
++    def _have(*keys):
++        return all(k in g for k in keys)
++
++    # Each line emits only when its required configs were actually evaluated, so the
++    # summary degrades gracefully under partial / SUPP-only runs.
++    if _have("A_REF", "E1_noDAS"):
++        md.append(f"- DAS (foundation): A_REF {g['A_REF']:.3f} - E1_noDAS {g['E1_noDAS']:.3f} "
++                  f"= **{(g['A_REF']-g['E1_noDAS'])*100:+.1f} pp**")
++    if _have("A_V20", "A_V13"):
++        md.append(f"- falsification (V15) on top of full: Full - (-falsif) "
++                  f"= **{(g['A_V20']-g['A_V13'])*100:+.1f} pp**")
++    if _have("A_V20", "A_V15"):
++        md.append(f"- residual split (V13) on top of full: Full - (-residual) "
++                  f"= **{(g['A_V20']-g['A_V15'])*100:+.1f} pp**")
++    if _have("A_V15", "A_REF"):
++        md.append(f"- V15 alone over DAS-base: A_V15 - A_REF = **{(g['A_V15']-g['A_REF'])*100:+.1f} pp**")
++    if _have("A_V13", "A_REF"):
++        md.append(f"- V13 alone over DAS-base: A_V13 - A_REF = **{(g['A_V13']-g['A_REF'])*100:+.1f} pp**")
++    if _have("A_V20", "A_V13", "A_V15", "A_REF"):
++        md.append(f"- both modules over DAS-base: A_V20 - A_REF = **{(g['A_V20']-g['A_REF'])*100:+.1f} pp** "
++                  f"(vs sum of singles {((g['A_V13']-g['A_REF'])+(g['A_V15']-g['A_REF']))*100:+.1f} pp "
++                  f"-> additivity/complementarity check)")
++    # SUPP component deltas (only when those configs were evaluated)
++    if _have("A_V13_GRL", "ACR_Lfreq_only"):
++        md.append(f"- ACR GRL half: A_V13_GRL - ACR_Lfreq_only "
++                  f"= **{(g['A_V13_GRL']-g['ACR_Lfreq_only'])*100:+.1f} pp**")
++    if _have("A_V13_GRL", "ACR_GRL_only"):
++        md.append(f"- ACR residual half: A_V13_GRL - ACR_GRL_only "
++                  f"= **{(g['A_V13_GRL']-g['ACR_GRL_only'])*100:+.1f} pp**")
++    if _have("A_V13_GRL", "ACR_discrete"):
++        md.append(f"- continuous vs discrete adversary: A_V13_GRL - ACR_discrete "
++                  f"= **{(g['A_V13_GRL']-g['ACR_discrete'])*100:+.1f} pp**")
++    if _have("DAS_stretch_only", "DAS_ERM"):
++        md.append(f"- Doppler-stretch alone over ERM: DAS_stretch_only - DAS_ERM "
++                  f"= **{(g['DAS_stretch_only']-g['DAS_ERM'])*100:+.1f} pp**")
+     md.append("\n## Eval-harness cross-check (278-subset final-EMA vs run history last-epoch)")
+-    maxd = max(abs(d) for *_, d in xcheck)
++    maxd = max((abs(d) for *_, d in xcheck), default=0.0)
+     md.append(f"max |diff| vs history.json = {maxd:.4f} (should be ~0 -> harness validated)")
+     text = "\n".join(md)
+     Path("EXPERIMENTSRESULT/CKPT_SELECTION_DIAG/ablation_finalEMA_3seed.md").write_text(text, encoding="utf-8")
+

@@ -1,0 +1,38 @@
+{
+  "n_clips": 418,
+  "n_boot": 10000,
+  "rng_seed": 0,
+  "note": "PRELIMINARY -- eval-only, existing checkpoints",
+  "deltas": [
+    {
+      "delta": "DAS+ACR single - DAS single",
+      "observed_pp": 6.55,
+      "ci95_pp": [
+        4.69,
+        8.37
+      ],
+      "frac_gt0": 1.0,
+      "boot_mean_pp": 6.55
+    },
+    {
+      "delta": "DAS single - jitter single",
+      "observed_pp": 24.9,
+      "ci95_pp": [
+        21.47,
+        28.32
+      ],
+      "frac_gt0": 1.0,
+      "boot_mean_pp": 24.92
+    },
+    {
+      "delta": "DAS+ACR ensemble - DAS+ACR single",
+      "observed_pp": 2.4,
+      "ci95_pp": [
+        0.89,
+        3.96
+      ],
+      "frac_gt0": 0.9986,
+      "boot_mean_pp": 2.42
+    }
+  ]
+}

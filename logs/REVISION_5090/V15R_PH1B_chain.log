@@ -1,0 +1,7 @@
+==== 18:39:00 START wc_gentle -> EXPERIMENTSRESULT/REVISION_5090/V15R_PH1B/wc_gentle_seed42 ====
+==== 19:04:04 DONE  wc_gentle (exit 0) ====
+==== 19:04:04 START margin_only -> EXPERIMENTSRESULT/REVISION_5090/V15R_PH1B/margin_only_seed42 ====
+==== 19:23:13 DONE  margin_only (exit 0) ====
+==== 19:23:13 START realism03 -> EXPERIMENTSRESULT/REVISION_5090/V15R_PH1B/realism03_seed42 ====
+==== 19:37:05 DONE  realism03 (exit 0) ====
+==== V15R PHASE1B DONE ====

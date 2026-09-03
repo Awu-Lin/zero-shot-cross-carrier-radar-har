@@ -1,0 +1,6 @@
+[data] full-418=418
+continuous single mean F1 = 0.8322
+discrete   single mean F1 = 0.7965
+
+continuous - discrete (full ACR): observed = +3.57 pp
+95% CI = [+1.91, +5.31] pp   P(>0) = 1.000   B=10000
